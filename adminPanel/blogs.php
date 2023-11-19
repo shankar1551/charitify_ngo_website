@@ -1,3 +1,8 @@
+<?php
+
+require_once "./config.php";
+
+?>
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -97,44 +102,69 @@
     <div class="row bg-dark">
       <div class="col-10 m-auto">
         <section class="blog-listing gray-bg">
-                <div class="row bg-secondary justify-content-center">
-                    <div class="col-sm-4 text-center">Title for the page</div>
-                    <div class="col-lg-12">
-                        <button><a href="">Create Stories/Blog</a></button>
-                    </div>
-                </div>
-
                 <div class="container">
+                    <div class="row bg-light justify-content-center">
+                        <div class="col-sm-4 text-center"><h1 class="mt-3">Blogs</h1></div>
+
+                        <div class="col-lg-12">
+                            <a class="btn btn-primary m-2" href="">Create New Blog</a>
+                        </div>
+                    </div>
                     <div class="row align-items-start">
                         <div class="col-lg-12 m-15px-tb">
                             <div class="row">
                                 
                                     
-                                <!-- ===============single blog========= -->
+                 <!-- ===============single blog========= -->
+
+                                <?php
+                                 $sql = "SELECT * from blogs";
+                                 $result = $link->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                  // output data of each row
+                                  while($row = $result->fetch_assoc()) {
+
+                                ?>
+
                                 <div class="col-sm-4">
                                     <div class="blog-grid">
                                         <div class="blog-img">
                                             <div class="date">
-                                                <span>04</span>
-                                                <label>FEB</label>
+                                                <span>
+                                                    <?php
+                                                        echo date("d", strtotime($row["createtd_at"]));
+                                                    ?>
+                                                </span>
+                                                <label>
+                                                     <?php
+                                                        echo date("F", strtotime($row["createtd_at"]));
+                                                    ?>
+                                                </label>
                                             </div>
                                             <a href="#">
-                                                <img src="https://www.bootdey.com/image/400x200/FFB6C1/000000" title="" alt="">
+                                                <img src="./upload/<?php echo $row['image1'];  ?>" title="" alt="">
                                             </a>
                                         </div>
                                         <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <h5><a href="#">
+                                                <?php
+                                                    echo implode(' ', array_slice(str_word_count($row['title'], 2), 0, 6));
+                                                    ?>
+                                            </a></h5>
+
+                                            <p>
+                                                <?php
+                                                    echo implode(' ', array_slice(str_word_count($row['subtitle'], 2), 0, 12));
+                                                ?>
+                                            </p>
                                             <div class="btn-bar">
                                                 <a href="#" class="px-btn-arrow m-3">
                                                     <span>Read More</span>
                                                     <i class="arrow"></i>
                                                 </a>
-                                                <a href="#" class="px-btn-arrow m-3">
-                                                    <span>Edit</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                                <a href="#" class="px-btn-arrow m-3">
+                                               
+                                                <a href="#" class="px-btn-arrow btn-danger m-3">
                                                     <span>Delete</span>
                                                     <i class="arrow"></i>
                                                 </a>
@@ -142,126 +172,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
 
 
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">
-                                                <span>04</span>
-                                                <label>FEB</label>
-                                            </div>
-                                            <a href="#">
-                                                <img src="https://www.bootdey.com/image/400x200/D3D3D3/000000" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">
-                                                <span>04</span>
-                                                <label>FEB</label>
-                                            </div>
-                                            <a href="#">
-                                                <img src="https://www.bootdey.com/image/400x200/87CEFA/000000" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">
-                                                <span>04</span>
-                                                <label>FEB</label>
-                                            </div>
-                                            <a href="#">
-                                                <img src="https://www.bootdey.com/image/400x200/D3D3D3/000000" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">
-                                                <span>04</span>
-                                                <label>FEB</label>
-                                            </div>
-                                            <a href="#">
-                                                <img src="https://www.bootdey.com/image/400x200/E0FFFF/000000" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">
-                                                <span>04</span>
-                                                <label>FEB</label>
-                                            </div>
-                                            <a href="#">
-                                                <img src="https://www.bootdey.com/image/400x200/FFF0F5/000000" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
+                            <?php 
+                             }
+                            } else {
+                              echo "0 results";
+                            }
+
+                            ?>
+                    <!-- ====================Single Blog end--------- -->
+                                
+                              
+
+                                <!-- <div class="col-12">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item disabled">
                                             <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
@@ -275,7 +201,8 @@
                                             <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
+
                             </div>
                         </div>
 

@@ -1,8 +1,10 @@
+<?php
+    include './isLoggedIn.php';
+  ?>
+
 
 <!doctype html>
 <html class="no-js" lang="en">
-<!--<![endif]-->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,7 +83,7 @@
                             <li class="active"> <a href="index.html">Home</a></li>
                             <li><a href="stories.html">Blogs</a></li>
                             <li><a href="stories.html">Carrier</a></li>
-                            <li> <a href="contact.html">Logout</a></li>
+                            <li> <a href="./logout.php">Logout</a></li>
                         </ul>
 
                     </div>

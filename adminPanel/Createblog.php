@@ -1,3 +1,171 @@
+<?php
+
+
+
+# Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+
+    //importing th conntion
+    require_once "./config.php";
+
+
+  // ================form valiation=====================
+  if (empty(trim($_POST["title"]))) {
+    $title_err = "Title is missing";
+  } else {
+    $title = trim($_POST["title"]);
+  }
+
+
+
+  if (empty(trim($_POST["sub_title"]))) {
+    $sub_title_err = "Sub title is missing";
+  } else {
+    $sub_title = trim($_POST["sub_title"]);
+  }
+
+
+
+// ========================Blog part one=====
+  if (empty(trim($_POST["blog_part_one"]))) {
+    $blog_part_one_err = "Please enter atleast one paragraph for blog";
+  } else {
+    $blog_part_one = trim($_POST["blog_part_one"]);
+  }
+
+
+   //valting the image file
+   // check if image is uploaded or not
+  if(file_exists($_FILES['image_1']['tmp_name']) || is_uploaded_file($_FILES['image_1']['tmp_name']))
+  {
+    $filecheck = basename($_FILES['image_1']['name']);
+    $ext = strtolower(substr($filecheck, strrpos($filecheck, '.') + 1));
+
+    if (!(($ext == "jpg" || $ext == "gif" || $ext == "png") && ($_FILES["image_1"]["type"] == "image/jpeg" || $_FILES["image_1"]["type"] == "image/gif" || $_FILES["image_1"]["type"] == "image/png")))
+    {
+        $img_error1 = "Upload a proper image";
+    }
+    else
+    {
+      
+       move_uploaded_file($_FILES["image_1"]["tmp_name"],"./upload/" . $_FILES["image_1"]["name"]);
+       // echo "Stored in: " . "upload/" . $_FILES["image_1"]["name"];
+       $img1 = $_FILES["image_1"]["name"]; 
+    }
+  }
+  else
+  {
+    $img1 = 'sample.jpg';
+  }
+
+   
+
+
+// ========================Blog part two==============
+  if (empty(trim($_POST["blog_part_two"]))) {
+    $blog_part_two = "";
+  } else {
+    $blog_part_two = trim($_POST["blog_part_two"]);
+  }
+
+//to be done
+    if(file_exists($_FILES['image_2']['tmp_name']) || is_uploaded_file($_FILES['image_2']['tmp_name']))
+    {
+        
+        $filecheck = basename($_FILES['image_2']['name']);
+        $ext = strtolower(substr($filecheck, strrpos($filecheck, '.') + 1));
+
+        if (!(($ext == "jpg" || $ext == "gif" || $ext == "png") && ($_FILES["image_1"]["type"] == "image/jpeg" || $_FILES["image_2"]["type"] == "image/gif" || $_FILES["image_2"]["type"] == "image/png")))
+        {
+           $img_error2 = "Upload a proper image";
+        }
+        else
+        {
+          
+           move_uploaded_file($_FILES["image_2"]["tmp_name"],"upload/" . $_FILES["image_2"]["name"]);
+           // echo "Stored in: " . "upload/" . $_FILES["image_2"]["name"];
+           $img2 = $_FILES["image_2"]["name"]; 
+        }
+      }
+  else
+  {
+    $img2 = '';
+  }
+
+
+
+
+
+// ========================Blog part three==============
+  
+   if (empty(trim($_POST["blog_part_three"]))) {
+    $blog_part_three = "";
+  } else {
+    $blog_part_three = trim($_POST["blog_part_three"]);
+  }
+
+
+   
+    if(file_exists($_FILES['image_3']['tmp_name']) || is_uploaded_file($_FILES['image_3']['tmp_name']))
+    { 
+        $filecheck = basename($_FILES['image_1']['name']);
+        $ext = strtolower(substr($filecheck, strrpos($filecheck, '.') + 1));
+
+        if (!(($ext == "jpg" || $ext == "gif" || $ext == "png") && ($_FILES["image_3"]["type"] == "image/jpeg" || $_FILES["image_3"]["type"] == "image/gif" || $_FILES["image_3"]["type"] == "image/png")))
+        {
+            $img_error3 = "Upload a proper image";
+        }
+        else
+        {
+          
+           move_uploaded_file($_FILES["image_3"]["tmp_name"],"./upload/" . $_FILES["image_3"]["name"]);
+           echo "Stored in: " . "upload/" . $_FILES["image_3"]["name"];
+           $img2 = $_FILES["image_3"]["name"]; 
+        }
+      }
+  else
+  {
+    $img3 = '';
+  }
+
+
+
+
+  # checking for error and save the data  
+    if(empty($blog_part_one_err) && empty($img_1_err) && empty($title_err) && empty($sub_title_err) && empty($img_error1) && empty($img_error2) && empty($img_error3) )
+    {
+
+        //if no errors store the values in db 
+         # Prepare a select statement
+        $sql = "INSERT INTO `blogs` (`title`, `subtitle`, `para1`, `image1`, `para2`, `image2`, `para3`, `image3`, `createtd_at`)";
+        $sql.= "VALUES ('{$title}', '{$sub_title}', '{$blog_part_one}', '{$img1}', '{$blog_part_two}', '{$img2}', '{$blog_part_three}', '{$img3}', current_timestamp())";
+
+        // die($sql);
+
+        if (mysqli_query($link, $sql))
+        {
+          echo "New record created successfully";
+        }
+         else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($link);
+        }
+
+        mysqli_close($link);
+
+    }
+   
+    else
+    {
+        
+    }
+
+
+
+}
+?>
+
+
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -94,23 +262,40 @@
 
 
     <!-- ===============admin menu cards========================== -->
-    <div class="row bg-dark">
+    <div class="row">
       <div class="col-10 m-auto">
         <section class="blog-listing gray-bg">
                 <div class="row justify-content-center p-3 m-2">
-                    <div class="col-sm-4 text-center">Title for the page</div>
+                 <div class="col-12">
+                     <div class="row bg-light justify-content-center">
+                        <div class="col-sm-4 text-center"><h2 class="mt-3">Blogs</h2></div>
+                    </div>
+
+                 </div>   
                     
 
                     <!-- Form start -->
                     <div class="col-lg-10">
-                        <form>
+                        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate enctype="multipart/form-data">
                           
                           <div class="form-group mt-2">
+                            <h4 class=" alert-danger" role="alert">
+                              <?php
+                                  if (!empty($title_err)) 
+                                      echo $title_err ;
+                              ?>
+                            </h4>
                             <label for="title">Title Of Blog</label>
                             <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter The Blog Title">
                           </div>
 
                           <div class="form-group mt-2">
+                            <h4 class=" alert-danger" role="alert">
+                              <?php
+                                    if (!empty($sub_title_err)) 
+                                      echo $sub_title_err ;
+                              ?>
+                            </h4>
                             <label for="title">Sub-title Of Blog</label>
                             <input type="textbox" class="form-control" id="sub_title" name="sub_title" aria-describedby="emailHelp" placeholder="Enter The Blog Title">
                           </div>
@@ -118,16 +303,27 @@
 
                           <!-- first part -->
                           <div class="form-group mt-4">
+                            <h4 class=" alert-danger" role="alert">
+                              <?php
+                                
+                              if (!empty($blog_part_one_err)) 
+                                      echo $blog_part_one_err ;
+                              ?>
+                            </h4>
                             <label for="blog_part_one">First Part Of Blog</label>
                              <textarea class="form-control p-0 m-0" id="blog_part_one" name="blog_part_one"  placeholder="Blog Part One" rows="6" cols="80%">
                                 
                             </textarea>
                           </div>
                           <div class="form-group">
+                            <h4 class=" alert-danger" role="alert">
+
+                            </h4>
                             <label for="exampleFormControlFile1">Image One</label>
-                            <input type="file" class="form-control-file" id="image_1">
+                            <input type="file" class="form-control-file" id="image_1" name="image_1">
                           </div>
                           <br><br>
+
                           <!-- Second part -->
                           <div class="form-group mt-4">
                             <label for="blog_part_one">Second Part of Blog</label>
@@ -136,18 +332,31 @@
                             </textarea>
                           </div>
                           <div class="form-group">
+                            <h4 class=" alert-danger" role="alert">
+                              <?php
+                                    if (!empty($img_error2)) 
+                                      echo $img_error2 ;
+                              ?>
+                            </h4>
                             <label for="exampleFormControlFile1">Image Two</label>
                             <input type="file" class="form-control-file" id="image_2" name="image_2">
                           </div>
                           <br><br>
                           <!-- Third part -->
                           <div class="form-group mt-4">
+                            <?php
+                                   
+                              ?>
                             <label for="blog_part_one">Third Part Of Blog</label>
-                            <textarea class="form-control p-0 m-0" id="blog_part_two" name="blog_part_two"  placeholder="Blog Part One" rows="6" cols="80%">
+                            <textarea class="form-control p-0 m-0" id="blog_part_two" name="blog_part_three"  placeholder="Blog Part One" rows="6" cols="80%">
                                 
                             </textarea>
                           </div>
                           <div class="form-group">
+                            <?php
+                                    if (!empty($img_error3)) 
+                                      echo $$img_error3 ;
+                              ?>
                             <label for="exampleFormControlFile1">Image Three</label>
                             <input type="file" class="form-control-file" id="image_3" name="image_3">
                           </div>
@@ -269,10 +478,8 @@
                 })();
             </script>
 </body>
-
-
 </html>
 
 
 
-
+<!-- ==============handling the submission of form============== -->

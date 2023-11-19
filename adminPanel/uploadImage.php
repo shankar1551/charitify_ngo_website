@@ -1,3 +1,71 @@
+<?php
+
+
+
+# Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+
+    //importing th conntion
+    require_once "./config.php";
+
+
+  // ================form valiation=====================
+
+   //valting the image file
+   // check if image is uploaded or not
+  if(file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name']))
+  {
+    $filecheck = basename($_FILES['image']['name']);
+    $ext = strtolower(substr($filecheck, strrpos($filecheck, '.') + 1));
+
+    if (!(($ext == "jpg" || $ext == "gif" || $ext == "png") && ($_FILES["image"]["type"] == "image/jpeg" || $_FILES["image"]["type"] == "image/gif" || $_FILES["image"]["type"] == "image/png")))
+    {
+        $img_error = "Upload a proper image";
+    }
+    else
+    {
+      
+       move_uploaded_file($_FILES["image"]["tmp_name"],"./upload/gallery/" . $_FILES["image"]["name"]);
+       $img = $_FILES["image"]["name"]; 
+    }
+  }
+  else
+  {
+    $img_err = 'Pease Upload a Valid Image ';
+  }
+
+   
+
+
+
+
+
+  # checking for error and save the data  
+    if(empty($img_err))
+    {
+
+        //if no errors store the values in db 
+         # Prepare a select statement
+        $sql = "INSERT INTO `gallery` (`file_link`, `createtd_at`)";
+        $sql.= "VALUES ('{$img}', current_timestamp())";
+
+        if (mysqli_query($link, $sql))
+        {
+          echo "New record created successfully";
+        }
+         else {
+              echo "Error: " . $sql . "<br>" . mysqli_error($link);
+        }
+
+        mysqli_close($link);
+
+    }
+   
+}
+?>
+
+
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -94,28 +162,58 @@
 
 
     <!-- ===============admin menu cards========================== -->
-    <div class="row bg-dark">
+    <div class="row">
       <div class="col-10 m-auto">
         <section class="blog-listing gray-bg">
                 <div class="row justify-content-center p-3 m-2">
-                    <div class="col-sm-4 text-center">Title for the page</div>
+                 <div class="col-12">
+                     <div class="row bg-light justify-content-center">
+                        <div class="col-sm-4 text-center"><h2 class="mt-3">Upload Galery Image</h2></div>
+                    </div>
+
+                 </div>   
                     
 
                     <!-- Form start -->
-                    <div class="col-lg-10 mt-4 pb-3">
-                        <form>
+                    <div class="col-lg-10">
+                        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate enctype="multipart/form-data">
                           
+                          
+
+                          <!-- first part -->
+                         
                           <div class="form-group">
-                            <label for="exampleFormControlFile1">Upload New Image</label>
-                            <input type="file" class="form-control-file" id="image_3" name="image_3">
+                            <h4 class=" alert-danger" role="alert">
+                                <?php
+                                  if (!empty($image_err)) 
+                                      echo $title_err ;
+                                ?>  
+                            </h4>
+                            <label for="exampleFormControlFile1">Image</label>
+                            <input type="file" class="form-control-file" id="image" name="image">
                           </div>
+                          <br><br>
+
+                          <!-- Second part -->
+                         
+                         
+                         
 
 
                           <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                         <!-- Form End -->
+
+
+
+
+
+
+
                     </div>
-                </div>              
+                </div>
+
+              
             </section>  
               
         </div>
@@ -218,10 +316,8 @@
                 })();
             </script>
 </body>
-
-
 </html>
 
 
 
-
+<!-- ==============handling the submission of form============== -->

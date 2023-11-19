@@ -1,3 +1,8 @@
+<?php
+
+require_once "./config.php";
+
+?>
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -8,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="author" content="DynamicLayers">
-    <title>Himal-I || Admin Panel </title>
+    <title>Himal-I || Admin Panel || Impact of Stories</title>
     <link rel="shortcut icon" type="../image/x-icon" href="img/favicon.png">
 
     <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -36,12 +41,6 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" type="text/css" href="./adminCss/admin.css">
     <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <style>
-        div.imagetiles div.col-lg-3.col-md-3.col-sm-3.col-xs-6{
-        padding: 0px;
-        }
-    </style>
-             
 </head>
 
 <body>
@@ -103,44 +102,91 @@
     <div class="row bg-dark">
       <div class="col-10 m-auto">
         <section class="blog-listing gray-bg">
-                <div class="row bg-secondary justify-content-center">
-                    <div class="col-sm-4 text-center">Title for the page</div>
-                    <div class="col-lg-12">
-                        <button><a href="">Upload New Image</a></button>
+                <div class="container">
+                    <div class="row bg-light justify-content-center">
+                        <div class="col-sm-4 text-center"><h1 class="mt-3">Gallery</h1></div>
+
+                        <div class="col-lg-12">
+                            <a class="btn btn-primary m-2" href="">Upload New Photo</a>
+                        </div>
+                    </div>
+                    <div class="row align-items-start">
+                        <div class="col-lg-12 m-15px-tb">
+                            <div class="row">
+                                
+                 <!-- ===============single photo========= -->
+                                <?php
+                                 $sql = "SELECT * from gallery";
+                                 $result = $link->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                  // output data of each row
+                                  while($row = $result->fetch_assoc()) {
+
+                                ?>
+
+                                <div class="col-sm-4">
+                                    <div class="blog-grid">
+                                        <div class="blog-img">
+                                            
+                                             <a href="#">
+                                                <img src="./upload/gallery/<?php echo $row['file_link'];  ?>" title="" alt="">
+                                            </a> 
+                                        </div>
+                                        <div class="blog-info">
+                                           
+                                           
+                                            <div class="btn-bar">
+                                               <!--  <a href="#" class="px-btn-arrow m-3">
+                                                    <span><a href="" class="btn btn-success">View PDF</a></span>
+                                                    <i class="arrow"></i>
+                                                </a> -->
+                                               
+                                                <a href="#" class=" btn px-btn-arrow btn-danger m-3">
+                                                    <span>Delete</span>
+                                                    <i class="arrow"></i>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            <?php 
+                             }
+                            } else {
+                              echo "0 results";
+                            }
+
+                            ?>
+                    <!-- ====================Single Blog end--------- -->
+                                
+                              
+
+                                <!-- <div class="col-12">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-                <div class="container m-4 justify-content-center">
-                    <div class="row imagetiles">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 p-3 justify-content-center">
-                            <img src=https://i.scdn.co/image/2fd8fa0f7ef2f83691a0fb9628ee369b8e3b688e class="img-responsive">
-                            <button class="btn btn-danger m-1">Delete</button>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 p-3">
-                            <img src=https://i.scdn.co/image/2fd8fa0f7ef2f83691a0fb9628ee369b8e3b688e class="img-responsive">
-                            <button class="btn btn-danger m-1">Delete</button>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 p-3">
-                            <img src=https://i.scdn.co/image/2fd8fa0f7ef2f83691a0fb9628ee369b8e3b688e class="img-responsive">
-                            <button class="btn btn-danger m-1">Delete</button>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 p-3">
-                            <img src=https://i.scdn.co/image/2fd8fa0f7ef2f83691a0fb9628ee369b8e3b688e class="img-responsive">
-                            <button class="btn btn-danger m-1">Delete</button>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 p-3">
-                            <img src=https://i.scdn.co/image/2fd8fa0f7ef2f83691a0fb9628ee369b8e3b688e class="img-responsive">
-                            <button class="btn btn-danger m-1">Delete</button>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 p-3">
-                            <img src=https://i.scdn.co/image/2fd8fa0f7ef2f83691a0fb9628ee369b8e3b688e class="img-responsive">
-                            <button class="btn btn-danger m-1">Delete</button>
-                        </div>
-                        
-                    </div>
-                </div>
-
-        </section>  
+            </section>  
               
         </div>
     </div>
