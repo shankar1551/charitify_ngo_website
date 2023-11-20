@@ -1,5 +1,7 @@
 <?php
 
+include './isLoggedIn.php';
+
 
 
 # Processing form data when form is submitted
@@ -14,7 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   if (empty(trim($_POST["title"]))) {
     $title_err = "Title is missing";
   } else {
-    $title = trim($_POST["title"]);
+        $title = trim($_POST["title"]);
+
+        $title = preg_replace('/[^A-Za-z0-9-]+/', '-', $title);
+
+        //check if similar title exist in db
+        $result = $link->query("  SELECT 1 FROM blogs WHERE title={$title} LIMIT 1 ");
+        if ($result->num_rows > 0) {
+             $title_err = "Title is duplicate please selact a new title";
+        } 
+
   }
 
 
@@ -268,7 +279,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <div class="row justify-content-center p-3 m-2">
                  <div class="col-12">
                      <div class="row bg-light justify-content-center">
-                        <div class="col-sm-4 text-center"><h2 class="mt-3">Blogs</h2></div>
+                        <div class="col-sm-4 text-center"><h2 class="mt-3">Create a Blog</h2></div>
                     </div>
 
                  </div>   

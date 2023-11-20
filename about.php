@@ -68,35 +68,39 @@
                 <div class="bottom-content-wrap row">
                     <div class="col-sm-4">
                         <div class="site-branding">
-                            <a href="index.html"><img src="img/logo.png" alt="Brand"></a>
+                            <a href="index.php"><img src="img/logo.png" alt="Brand"></a>
                             <p>For Sustainable And Resilient Society</p>
                         </div>
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a>
-                                <ul>
-                                    <li><a href="#executives">Executive Board</a></li>
-                                    <li><a href="#staff">Staff </a></li>
-                                    <li><a href="#advisors">Advisor </a></li>
-                                    <li><a href="#coverage">Coverage </a></li>
-                                    <li><a href="#implementing">Implementing Partners </a></li>
+                            <li class="active"> <a href="index.php">Home</a>
 
+                            </li>
+                            <li><a href="about.php">About</a>
+                                <ul>
+                                    <li><a href="./about.php#executives">Executive Board</a></li>
+                                    <li><a href="./about.php#staff">Staff </a></li>
+                                    <li><a href="./about.php#advisors">Advisor </a></li>
+                                    <li><a href="./about.php#coverage">Coverage </a></li>
+                                    <li><a href="./about.php#implementing">Implementing Partners </a></li>
                                 </ul>
                             </li>
                             <li><a href="stories.html">Impact of Stories</a></li>
-                            <li><a href="#">Strategic Areas</a>
+
+
+                            <li><a href="area1.html">Strategic Areas</a>
                                 <ul>
-                                    <li><a href="area1.html">Strategic Area 1</a></li>
-                                    <li><a href="area2.html">Strategic Area 2</a></li>
-                                    <li><a href="area3.html">Strategic Area 3</a></li>
+                                    <li><a href="area1.php">Strategic Area 1</a></li>
+                                    <li><a href="area2.php">Strategic Area 2</a></li>
+                                    <li><a href="area3.php">Strategic Area 3</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="knowledge-hub.html">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.html">Get Involved</a></li>
-                            <li> <a href="contact.html">Contact</a></li>
+                            <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
+                            <li> <a href="get-involved.php">Get Involved</a></li>
+                            <li> <a href="contact.php">Contact</a></li>
                         </ul>
+
                     </div>
                 </div>
             </div>

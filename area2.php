@@ -79,39 +79,39 @@
                 <div class="bottom-content-wrap row">
                     <div class="col-sm-4">
                         <div class="site-branding">
-                            <a href="index.html"><img src="img/logo.png" alt="Brand"></a>
+                            <a href="index.php"><img src="img/logo.png" alt="Brand"></a>
                             <p>For Sustainable And Resilient Society</p>
                         </div>
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a>
+                            <li class="active"> <a href="index.php">Home</a>
+
                             </li>
                             <li><a href="about.html">About</a>
                                 <ul>
-                                     <li><a href="./about.html#executives">Executive Board</a></li>
-                                    <li><a href="./about.html#staff">Staff </a></li>
-                                    <li><a href="./about.html#advisors">Advisor </a></li>
-                                    <li><a href="./about.html#coverage">Coverage </a></li>
-                                    <li><a href="./about.html#implementing">Implementing Partners </a></li>
+                                    <li><a href="./about.php#executives">Executive Board</a></li>
+                                    <li><a href="./about.php#staff">Staff </a></li>
+                                    <li><a href="./about.php#advisors">Advisor </a></li>
+                                    <li><a href="./about.php#coverage">Coverage </a></li>
+                                    <li><a href="./about.php#implementing">Implementing Partners </a></li>
                                 </ul>
                             </li>
                             <li><a href="stories.html">Impact of Stories</a></li>
 
-                            <li><a href="#">Strategic Areas</a>
+
+                            <li><a href="area1.html">Strategic Areas</a>
                                 <ul>
-                                    <li><a href="area1.html">Strategic Area 1</a></li>
-                                    <li><a href="area2.html">Strategic Area 2</a></li>
-                                    <li><a href="area3.html">Strategic Area 3</a></li>
+                                    <li><a href="area1.php">Strategic Area 1</a></li>
+                                    <li><a href="area2.php">Strategic Area 2</a></li>
+                                    <li><a href="area3.php">Strategic Area 3</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="knowledge-hub.html">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.html">Get Involved</a></li>
-                            <li> <a href="contact.html">Contact</a></li>
+                            <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
+                            <li> <a href="get-involved.php">Get Involved</a></li>
+                            <li> <a href="contact.php">Contact</a></li>
                         </ul>
-                        </li>
 
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -119,15 +119,17 @@
     </header>
     <!-- =============================== Top Heading ============================= -->
 
+
     <div class="header-height"></div>
+
     <div class="pager-header">
         <div class="container">
             <div class="page-content">
-                <h2>Strategic Area 3:</h2>
-                <p>Enhancement of Ecosystem and Biodiversity</p>
+                <h2>Strategic Area 2:</h2>
+                <p>Sustainable Livelihood</p>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Strategic Area 3:</li>
+                    <li class="breadcrumb-item active">Strategic Area 2:</li>
                 </ol>
             </div>
         </div>
@@ -140,41 +142,39 @@
                 <div class="col-lg-9 sm-padding">
                     <div class="blog-items single-post row">
 
-                        <h3>Strategic Area 3: Enhancement of Ecosystem and Biodiversity</h3>
-                        <img width="8" src="img/SA3.jpeg" alt="blog post">
-                        <p>About 86% of the total land area is covered by hills and high mountains, and the remaining 14% are the flat lands of the Terai. Despite the uniqueness and variety of ecosystems, the ecosystems are very fragile and prone to degradation
-                            both inherently and in response to anthropogenic activities. Adverse climatic conditions, excessive resource use and associated environmental degradation are responsible for the accelerated rate of natural disasters like soil
-                            erosion and land degradation which in turn are making the ecosystems insubstantial.
+                        <h3>Strategic Area 2: Sustainable Livelihood</h3>
+                        <img src="img/SA2.jpg" alt="blog post">
+                        <p>One-quarter of Nepal population is living below the poverty line. Nepal economy and most people livelihood are heavily dependent on agriculture and remittances. However, these livelihood options are highly affected by climate change
+                            and pandemic disaster. Himal-I will jointly work with the local farmers, small micro entrepreneurs, local government, likeminded networks and academic researcher for the sustainability of people’s livelihood.
                         </p>
-                        <p>To conserve and balance the relation in between human and natural resources. </p>
-                        <div class="comments-wrapper">
 
-                            <h3>Objective:</h3>
+                        <p>To empower livelihood skills and increase livelihood income. </p>
+
+                        <div class="comments-wrapper">
+                            <h4>Objective:</h4>
+
                             <div class="comment-form">
-                                <p>The following interventions will be applied to achieve the objective of SA 3: </p>
+
+                                <p>To achieve the objective of SA 2, Himal-I takes following interventions: </p>
                                 <ol>
-                                    <li>Adopt and apply nature based solutions, Ecosystem based Adaptation (EbA) and Payment for Ecosystem Services (PES) approach. </li>
-                                    <li>Support local government institutions for the effective and sustainable management of urban and rural waste.</li>
-                                    <li>Enhancement of green infrastructure in urban and rural communities.</li>
-                                    <li>Develop and implement action-research to minimize the wildlife and human conflict through building appropriate habitat and environment friendly infrastructure.
+                                    <li>Provide alternative skills to the vulnerable communities, youth and migrant returnees for the wider scope of income generation </li>
+                                    <li>Establish and shift communities towards green economy or enterprises</li>
+                                    <li>Develop indicator based livelihood and business plan to monitor the progress in livelihood.</li>
+                                    <li>Capacitate local communities to access and optimum use of the resource available at local level.
                                     </li>
-                                    <li>Establish green tourism to minimize the carbon foot print and environment degradation in mountain communities.</li>
-                                    <li>Identify and manage sub watershed areas for the enhancement of biodiversity and livelihood services.</li>
-                                    <li>Strengthen water governance for improvement of water ecosystem</li>
+                                    <li>Conduct joint action-research with participation of local farmers, concerned networks and local government for the quality products and market consumptions.</li>
                                 </ol>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- =============================== BODY Part ============================= -->
-
 
                 <!-- =============================== Related Projects ============================= -->
                 <div class="col-lg-3 sm-padding">
                     <div class="sidebar-wrap">
                         <div class="sidebar-widget mb-50">
-                            <h4><u>Related Projects</u> </h4>
-                            <!--<ul class="recent-posts">
+                            <h4><u>Related Projects</u></h4>
+                            <!--<ul class="recent-posts"> 
                                 <li>
                                     <img src="img/Building Resiliance (2).jpeg" alt="blog post">
                                     <div>
@@ -200,16 +200,12 @@
                         </div>
                         <!-- =============================== Related Projects ============================= -->
 
+
+
                     </div>
                 </div>
-
-
-            </div>
-        </div>
     </section>
-
     <!-- =============================== BODY Part ============================= -->
-
 
     <section class="widget-section padding">
         <div class="container">

@@ -1,6 +1,19 @@
+<?php
+require_once "./adminPanel/config.php";
+
+   
+$story_slug = $_GET['title'];
+$sql = "SELECT * from blogs where title='{$story_slug}'";
+ $result = $link->query($sql);
+ $data = $result->fetch_assoc()
+// die();
+?>
+
+
+
+
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,17 +49,20 @@
 </head>
 
 <body>
-
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
     <div class="site-preloader-wrap">
         <div class="spinner"></div>
     </div>
+
     <header id="header" class="header-section">
         <div class="top-header">
             <div class="container">
                 <div class="top-content-wrap row">
                     <div class="col-sm-8">
                         <ul class="left-info">
-                            <li><a href="#"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="4e072028210e17213b3c0a21232f2720602d2123">info@himal-i.org</span></a></li>
+                            <li><a href="#"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="d29bbcb4bd928bbda7a096bdbfb3bbbcfcb1bdbf">info@himal-i.org</span></a></li>
                             <li><a href="#"><i class="ti-mobile"></i>+977-9847012909</a></li>
                         </ul>
                     </div>
@@ -63,42 +79,44 @@
                 </div>
             </div>
         </div>
-        <div class="bottom-header">
+
+        <!-- =============================== Top Heading ============================= -->
+         <div class="bottom-header">
             <div class="container">
                 <div class="bottom-content-wrap row">
                     <div class="col-sm-4">
                         <div class="site-branding">
-                            <a href="index.html"><img src="img/logo.png" alt="Brand"></a>
+                            <a href="index.php"><img src="img/logo.png" alt="Brand"></a>
                             <p>For Sustainable And Resilient Society</p>
                         </div>
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a>
+                            <li class="active"> <a href="index.php">Home</a>
 
                             </li>
                             <li><a href="about.html">About</a>
                                 <ul>
-                                    <li><a href="#executives">Executive Board</a></li>
-                                    <li><a href="#staff">Staff </a></li>
-                                    <li><a href="#advisors">Advisor </a></li>
-                                    <li><a href="#coverage">Coverage </a></li>
-                                    <li><a href="#implementing">Implementing Partners </a></li>
+                                    <li><a href="./about.php#executives">Executive Board</a></li>
+                                    <li><a href="./about.php#staff">Staff </a></li>
+                                    <li><a href="./about.php#advisors">Advisor </a></li>
+                                    <li><a href="./about.php#coverage">Coverage </a></li>
+                                    <li><a href="./about.php#implementing">Implementing Partners </a></li>
                                 </ul>
                             </li>
                             <li><a href="stories.html">Impact of Stories</a></li>
 
 
-                            <li><a href="#">Strategic Areas</a>
+                            <li><a href="area1.html">Strategic Areas</a>
                                 <ul>
-                                    <li><a href="area1.html">Strategic Area 1</a></li>
-                                    <li><a href="area2.html">Strategic Area 2</a></li>
-                                    <li><a href="area3.html">Strategic Area 3</a></li>
+                                    <li><a href="area1.php">Strategic Area 1</a></li>
+                                    <li><a href="area2.php">Strategic Area 2</a></li>
+                                    <li><a href="area3.php">Strategic Area 3</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="knowledge-hub.html">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.html">Get Involved</a></li>
-                            <li> <a href="contact.html">Contact</a></li>
+                            <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
+                            <li> <a href="get-involved.php">Get Involved</a></li>
+                            <li> <a href="contact.php">Contact</a></li>
                         </ul>
 
                     </div>
@@ -106,65 +124,136 @@
             </div>
         </div>
     </header>
+    <!-- =============================== Top Heading ============================= -->
+
+
     <div class="header-height"></div>
+
     <div class="pager-header">
         <div class="container">
             <div class="page-content">
-                <h2>Contact With Us</h2>
-                <p>Help today because tomorrow you may be the one who <br>needs more helping!</p>
-                <ol class="breadcrumb">
+                <h2><?php echo $data['subtitle'] ?><h2>
+                <p></p>
+                <!-- <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Contact</li>
-                </ol>
+                    <li class="breadcrumb-item active">Strategic Area 1:</li>
+                </ol> -->
             </div>
         </div>
     </div>
-    <section class="contact-section padding">
-        <div id="google_map"></div>
+
+    <!-- =============================== BODY Part ============================= -->
+    <section class="blog-section bg-grey padding">
         <div class="container">
-            <div class="row contact-wrap">
-                <div class="col-md-6 xs-padding">
-                    <div class="contact-info">
-                        <h3>Get in touch</h3>
-                        <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor, the abused and the helpless.</p>
-                        <p>The secret to happiness lies in helping others. Never underestimate the difference.</p>
-                        <ul>
-                            <li><i class="ti-location-pin"></i> Head Office: Gharapjhong-4, Mustang, <br> Program Coordination Office: Kathmandu, Nepal</li>
-                            <li><i class="ti-mobile"></i> +977 9847012909</li>
-                            <li><i class="ti-email"></i> <a href="https://html.dynamiclayers.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7fec8d2d5c2cac6cecbe7c4c8cad7c6c9dec9c6cac289c4c8ca">info@himal-i.org</a></li>
-                        </ul>
+            <div class="row justify-content-center">
+                <div class="col-lg-9 sm-padding">
+                    <div class="blog-items single-post row">
+
+                           
+
+                        <h3>
+                            <?php echo $data['subtitle']  ?>
+
+                        </h3>
+                        <img src="./adminPanel/upload/<?php echo $data['image1']  ?>" alt="blog post">
+
+                        <p>
+                            <?php echo $data['para1']; ?>
+                        </p>
+
+
+                         <?php
+                         if(!empty($data['image2']))
+                         {
+                        ?>
+                            <br>
+                            <img src="./adminPanel/upload/<?php echo $data['image2']  ?>" alt="blog post">
+
+                        <?php  } ?>
+
+
+                        <!-- if the second part of blog paresent then display it -->
+                        <?php
+                         if(!empty($data['para2']))
+                         {
+                        ?>
+                            
+                            <br><br>
+                            <p>
+                                <?php echo $data['para2']; ?>
+                            </p>
+
+                        <?php  } ?>
+
+
+
+
+
+
+                        <?php
+                             if(!empty($data['image3'])){
+                        ?>
+                            <br><br><br>
+                            <img src="./adminPanel/upload/<?php echo $data['image3']  ?>" alt="blog post">
+
+                        <?php  } ?>
+
+
+
+                         <!-- if the third part of blog paresent then display it -->
+                        <?php
+                         if(!empty($data['para3'])) {
+                        ?>
+                            <br><br>
+                            <p> <?php echo $data['para3']; ?> </p>
+                        <?php } ?>
+
+
+
+
+
+                    
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 xs-padding">
-                    <div class="contact-form">
-                        <h3>Drop us a line</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <form action="https://html.dynamiclayers.net/dl/charitify/contact.php" method="post" id="ajax_form" class="form-horizontal">
-                            <div class="form-group colum-row row">
-                                <div class="col-sm-6">
-                                    <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <textarea id="message" name="message" cols="30" rows="5" class="form-control message" placeholder="Message" required></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <button id="submit" class="default-btn" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                            <div id="form-messages" class="alert" role="alert"></div>
-                        </form>
+
+                <!-- =============================== Related Projects ============================= -->
+               <!--  <div class="col-lg-3 sm-padding">
+                    <div class="sidebar-wrap">
+                        <div class="sidebar-widget mb-50">
+                            <h4>Related Projects</h4>
+                            <ul class="recent-posts">
+                                <li>
+                                    <img src="img/Building Resiliance (2).jpeg" alt="blog post">
+                                    <div>
+                                        <h4><a href="building-resilience.html">Building Resilience of Urban Community in Nepal</a></h4>
+                                        <span class="date"><i class="fa fa-clock-o"></i> Jan - July 2022</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="img/Winter support.jpeg" alt="blog post">
+                                    <div>
+                                        <h4><a href="wintersupporting.html">Winter Support to Flood Affected Community of Mustang</a></h4>
+                                        <span class="date"><i class="fa fa-clock-o"></i> Feb - March 2022</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="img/Covid.jpeg" alt="blog post">
+                                    <div>
+                                        <h4><a href="covidrespons.html">COVID Response Project</a></h4>
+                                        <span class="date"><i class="fa fa-clock-o"></i> April - Jun 2021</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                     =============================== Related Projects ============================= -->
+
                     </div>
-                </div>
-            </div>
-        </div>
+                </div> 
     </section>
+    <!-- =============================== BODY Part ============================= -->
+
     <section class="widget-section padding">
         <div class="container">
             <div class="widget-wrap row">
@@ -257,130 +346,10 @@
 
     <script src="js/contact.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGm_weV-pxqGWuW567g78KhUd7n0p97RY"></script>
-
     <script src="js/main.js"></script>
     <script>
-        (function($) {
-            "use strict";
-
-            /*=========================================================================
-                Google Map Settings
-            =========================================================================*/
-
-            google.maps.event.addDomListener(window, 'load', init);
-
-            function init() {
-
-                var mapOptions = {
-                    zoom: 11,
-                    center: new google.maps.LatLng(40.6700, -73.9400),
-                    scrollwheel: false,
-                    navigationControl: false,
-                    mapTypeControl: false,
-                    scaleControl: false,
-                    draggable: false,
-                    styles: [{
-                        "featureType": "administrative",
-                        "elementType": "all",
-                        "stylers": [{
-                            "saturation": "-100"
-                        }]
-                    }, {
-                        "featureType": "administrative.province",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    }, {
-                        "featureType": "landscape",
-                        "elementType": "all",
-                        "stylers": [{
-                            "saturation": -100
-                        }, {
-                            "lightness": 65
-                        }, {
-                            "visibility": "on"
-                        }]
-                    }, {
-                        "featureType": "poi",
-                        "elementType": "all",
-                        "stylers": [{
-                            "saturation": -100
-                        }, {
-                            "lightness": "50"
-                        }, {
-                            "visibility": "simplified"
-                        }]
-                    }, {
-                        "featureType": "road",
-                        "elementType": "all",
-                        "stylers": [{
-                            "saturation": "-100"
-                        }]
-                    }, {
-                        "featureType": "road.highway",
-                        "elementType": "all",
-                        "stylers": [{
-                            "visibility": "simplified"
-                        }]
-                    }, {
-                        "featureType": "road.arterial",
-                        "elementType": "all",
-                        "stylers": [{
-                            "lightness": "30"
-                        }]
-                    }, {
-                        "featureType": "road.local",
-                        "elementType": "all",
-                        "stylers": [{
-                            "lightness": "40"
-                        }]
-                    }, {
-                        "featureType": "transit",
-                        "elementType": "all",
-                        "stylers": [{
-                            "saturation": -100
-                        }, {
-                            "visibility": "simplified"
-                        }]
-                    }, {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "hue": "#ffff00"
-                        }, {
-                            "lightness": -25
-                        }, {
-                            "saturation": -97
-                        }]
-                    }, {
-                        "featureType": "water",
-                        "elementType": "labels",
-                        "stylers": [{
-                            "lightness": -25
-                        }, {
-                            "saturation": -100
-                        }]
-                    }]
-                };
-
-                var mapElement = document.getElementById('google_map');
-
-                var map = new google.maps.Map(mapElement, mapOptions);
-
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(40.6700, -73.9400),
-                    map: map,
-                    title: 'Location!'
-                });
-            }
-
-        })(jQuery);
-    </script>
-    <script>
         (function() {
-            var js = "window['__CF$cv$params']={r:'8187d6137ed79888',t:'MTY5NzcwNjA4NC43MTcwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/7ff8d35b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
+            var js = "window['__CF$cv$params']={r:'8187d6118eb59884',t:'MTY5NzcwNjA4NC4zODYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/7ff8d35b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
             var _0xh = document.createElement('iframe');
             _0xh.height = 1;
             _0xh.width = 1;
@@ -417,6 +386,7 @@
     </script>
 </body>
 
-<!-- Mirrored from html.dynamiclayers.net/dl/charitify/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:55 GMT -->
+<!-- Mirrored from html.dynamiclayers.net/dl/charitify/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:55 GMT -->
 
 </html>
+

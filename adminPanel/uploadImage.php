@@ -1,11 +1,13 @@
 <?php
 
+include './isLoggedIn.php';
+require_once "./config.php";
+
 
 
 # Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-
     //importing th conntion
     require_once "./config.php";
 

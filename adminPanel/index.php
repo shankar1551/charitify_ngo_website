@@ -97,11 +97,11 @@
 
     <!-- ===============admin menu cards========================== -->
     <div class="row bg-dark">
-      <div class="col-10 m-auto">
+      <div class="col-lg-10 m-auto">
         
         
       <div class="row  justify-content-center">
-        <div class="col-3 m-3 p-2 ">
+        <div class="col-md-3 p-2 col-sm-2">
             <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
@@ -112,7 +112,7 @@
           </div>
         </div>
 
-        <div class="col-3 m-3 p-2">
+        <div class=" col-md-3 p-2 col-sm-2">
            <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
@@ -122,7 +122,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3 p-2 m-3 ">
+        <div class="col-md-3 p-2 col-sm-2 ">
            <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
@@ -133,7 +133,7 @@
           </div>
         </div>
 
-        <div class="col-3 m-3 p-2"> <div class="card" style="width: 18rem;">
+        <div class="col-md-3 p-2 col-sm-2"> <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>

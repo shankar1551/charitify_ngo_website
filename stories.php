@@ -1,3 +1,7 @@
+<?php 
+    require_once "./adminPanel/config.php";
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <<head>
@@ -64,48 +68,48 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-header">
-                <div class="container">
-                    <div class="bottom-content-wrap row">
-                        <div class="col-sm-4">
-                            <div class="site-branding">
-                                <a href="index.html"><img src="img/logo.png" alt="Brand"></a>
-                                <p>For Sustainable And Resilient Society</p>
-                            </div>
+             <div class="bottom-header">
+            <div class="container">
+                <div class="bottom-content-wrap row">
+                    <div class="col-sm-4">
+                        <div class="site-branding">
+                            <a href="index.php"><img src="img/logo.png" alt="Brand"></a>
+                            <p>For Sustainable And Resilient Society</p>
                         </div>
-                        <div class="col-sm-8 text-right">
-                            <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                                <li class="active"> <a href="index.html">Home</a>
+                    </div>
+                    <div class="col-sm-8 text-right">
+                        <ul id="mainmenu" class="nav navbar-nav nav-menu">
+                            <li class="active"> <a href="index.php">Home</a>
 
-                                </li>
-                                <li><a href="about.html">About</a>
-                                    <ul>
-                                        <li><a href="./about.html#executives">Executive Board</a></li>
-                                        <li><a href="./about.html#staff">Staff </a></li>
-                                        <li><a href="./about.html#advisors">Advisor </a></li>
-                                        <li><a href="./about.html#coverage">Coverage </a></li>
-                                        <li><a href="./about.html#implementing">Implementing Partners </a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="stories.html">Impact of Stories</a></li>
+                            </li>
+                            <li><a href="about.html">About</a>
+                                <ul>
+                                    <li><a href="./about.php#executives">Executive Board</a></li>
+                                    <li><a href="./about.php#staff">Staff </a></li>
+                                    <li><a href="./about.php#advisors">Advisor </a></li>
+                                    <li><a href="./about.php#coverage">Coverage </a></li>
+                                    <li><a href="./about.php#implementing">Implementing Partners </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="stories.html">Impact of Stories</a></li>
 
 
-                                <li><a href="#">Strategic Areas</a>
-                                    <ul>
-                                        <li><a href="area1.html">Strategic Area 1</a></li>
-                                        <li><a href="area2.html">Strategic Area 2</a></li>
-                                        <li><a href="area3.html">Strategic Area 3</a></li>
-                                    </ul>
-                                </li>
-                                <li> <a href="knowledge-hub.html">Knowledge Hub</a></li>
-                                <li> <a href="get-involved.html">Get Involved</a></li>
-                                <li> <a href="contact.html">Contact</a></li>
-                            </ul>
+                            <li><a href="area1.html">Strategic Areas</a>
+                                <ul>
+                                    <li><a href="area1.php">Strategic Area 1</a></li>
+                                    <li><a href="area2.php">Strategic Area 2</a></li>
+                                    <li><a href="area3.php">Strategic Area 3</a></li>
+                                </ul>
+                            </li>
+                            <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
+                            <li> <a href="get-involved.php">Get Involved</a></li>
+                            <li> <a href="contact.php">Contact</a></li>
+                        </ul>
 
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </header>
         <div class="header-height"></div>
         <div class="pager-header">
@@ -124,81 +128,82 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 xs-padding">
+                        
                         <div class="blog-items grid-list row">
+
+
+
+
+                            <?php
+
+                                $sql = "SELECT * from blogs";
+                                 $result = $link->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                  // output data of each row
+                                  while($row = $result->fetch_assoc()) {
+
+
+                            ?>
+                              
                             <div class="col-md-4 padding-15">
                                 <div class="blog-post">
-                                    <img src="img/post-1.jpg" alt="blog post">
+                                    <img src="./adminPanel/upload/<?php echo $row['image1']  ?>" alt="blog post">
                                     <div class="blog-content">
-                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2018</span>
-                                        <h3><a href="#">Standard gallery post</a></h3>
-                                        <p>The secret to happiness lies in helping others. Never underestimate the difference </p>
-                                        <a href="area1.html" class="post-meta">Read More</a>
+                                        <span class="date"><i class="fa fa-clock-o"></i> 
+                                            <?php 
+                                                echo date("d-M, Y", strtotime($row["createtd_at"]));
+                                            ?>
+                                        </span>
+                                        <h3>
+                                            <a href="#">
+                                                <?php 
+                                                   echo $row["title"];
+                                                ?>
+                                            </a>
+                                        </h3>
+                                        <p>
+                                            <?php
+                                                    echo implode(' ', array_slice(str_word_count($row['subtitle'], 2), 0, 15));
+                                                ?> 
+                                        </p>
+                                        <a href="./story.php?title=<?php echo $row['title'] ?>" class="post-meta">Read More</a>
                                     </div>
                                 </div>
                             </div>
+                            <?php 
+                             }
+                                } else 
+                                {
+                               
+                            ?>
+
+
+
                             <div class="col-md-4 padding-15">
                                 <div class="blog-post">
-                                    <img src="img/post-2.jpg" alt="blog post">
-                                    <div class="blog-content">
-                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2018</span>
-                                        <h3><a href="#">Blog post with couple photos</a></h3>
-                                        <p>The secret to happiness lies in helping others. Never underestimate the difference </p>
-                                        <a href="#" class="post-meta">Read More</a>
-                                    </div>
+                                    <h3>No Stories for now. Stay Tuned..</h3>
                                 </div>
                             </div>
-                            <div class="col-md-4 padding-15">
-                                <div class="blog-post">
-                                    <img src="img/post-3.jpg" alt="blog post">
-                                    <div class="blog-content">
-                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2018</span>
-                                        <h3><a href="#">Standard gallery post</a></h3>
-                                        <p>The secret to happiness lies in helping others. Never underestimate the difference </p>
-                                        <a href="#" class="post-meta">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 padding-15">
-                                <div class="blog-post">
-                                    <img src="img/post-4.jpg" alt="blog post">
-                                    <div class="blog-content">
-                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2018</span>
-                                        <h3><a href="#">Blog post with couple photos</a></h3>
-                                        <p>The secret to happiness lies in helping others. Never underestimate the difference </p>
-                                        <a href="#" class="post-meta">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 padding-15">
-                                <div class="blog-post">
-                                    <img src="img/post-5.jpg" alt="blog post">
-                                    <div class="blog-content">
-                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2018</span>
-                                        <h3><a href="#">Standard gallery post</a></h3>
-                                        <p>The secret to happiness lies in helping others. Never underestimate the difference </p>
-                                        <a href="#" class="post-meta">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 padding-15">
-                                <div class="blog-post">
-                                    <img src="img/post-6.jpg" alt="blog post">
-                                    <div class="blog-content">
-                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2018</span>
-                                        <h3><a href="#">Blog post with couple photos</a></h3>
-                                        <p>The secret to happiness lies in helping others. Never underestimate the difference </p>
-                                        <a href="#" class="post-meta">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+
+
+
+
+
+
+                            <?php
+
+                                } 
+                            ?>
+                           
                         </div>
-                        <ul class="pagination_wrap align-center mt-30">
+                       <!--  <ul class="pagination_wrap align-center mt-30">
                             <li><a href="#"><i class="ti-arrow-left"></i></a></li>
                             <li><a href="#">1</a></li>
                             <li><a href="#" class="active">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#"><i class="ti-arrow-right"></i></a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>

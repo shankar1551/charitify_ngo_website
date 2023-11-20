@@ -46,7 +46,7 @@
                 <div class="top-content-wrap row">
                     <div class="col-sm-8">
                         <ul class="left-info">
-                            <li><a href="index.html"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="31785f575e71685e4443755e5c50585f1f525e5c">info@himal-i.org</span></a></li>
+                            <li><a href="index.php"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="31785f575e71685e4443755e5c50585f1f525e5c">info@himal-i.org</span></a></li>
                             <li><a href="#"><i class="ti-mobile"></i>+977-9847012909</a></li>
                         </ul>
                     </div>
@@ -77,16 +77,16 @@
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a>
+                            <li class="active"> <a href="index.php">Home</a>
 
                             </li>
                             <li><a href="about.html">About</a>
                                 <ul>
-                                    <li><a href="./about.html#executives">Executive Board</a></li>
-                                    <li><a href="./about.html#staff">Staff </a></li>
-                                    <li><a href="./about.html#advisors">Advisor </a></li>
-                                    <li><a href="./about.html#coverage">Coverage </a></li>
-                                    <li><a href="./about.html#implementing">Implementing Partners </a></li>
+                                    <li><a href="./about.php#executives">Executive Board</a></li>
+                                    <li><a href="./about.php#staff">Staff </a></li>
+                                    <li><a href="./about.php#advisors">Advisor </a></li>
+                                    <li><a href="./about.php#coverage">Coverage </a></li>
+                                    <li><a href="./about.php#implementing">Implementing Partners </a></li>
                                 </ul>
                             </li>
                             <li><a href="stories.html">Impact of Stories</a></li>
@@ -94,14 +94,14 @@
 
                             <li><a href="area1.html">Strategic Areas</a>
                                 <ul>
-                                    <li><a href="area1.html">Strategic Area 1</a></li>
-                                    <li><a href="area2.html">Strategic Area 2</a></li>
-                                    <li><a href="area3.html">Strategic Area 3</a></li>
+                                    <li><a href="area1.php">Strategic Area 1</a></li>
+                                    <li><a href="area2.php">Strategic Area 2</a></li>
+                                    <li><a href="area3.php">Strategic Area 3</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="knowledge-hub.html">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.html">Get Involved</a></li>
-                            <li> <a href="contact.html">Contact</a></li>
+                            <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
+                            <li> <a href="get-involved.php">Get Involved</a></li>
+                            <li> <a href="contact.php">Contact</a></li>
                         </ul>
 
                     </div>
@@ -396,12 +396,36 @@
                 </div>
                 <div class="col-md-4 xs-padding">
                     <div class="widget-content">
-                        <h3>Recent Campaigns</h3>
+                        <h3>Career</h3>
                         <ul class="widget-link">
-                            <li><a href="#">First charity activity of this summer. <span>-1 Year Ago</span></a></li>
-                            <li><a href="#">Big charity: build school for poor children. <span>-2 Year Ago</span></a></li>
-                            <li><a href="#">Clean-water system for rural poor. <span>-2 Year Ago</span></a></li>
-                            <li><a href="#">Nepal earthquake donation campaigns. <span>-3 Year Ago</span></a></li>
+                            
+                            <?php
+                                 require_once "./adminPanel/config.php";
+ 
+                                $sql = "SELECT * FROM career  ORDER BY id DESC LIMIT 1";
+                                 $result = $link->query($sql);
+
+                                 if ($result->num_rows > 0) {
+                                  // output data of each row   
+                            ?>
+
+
+
+                                
+                                   
+                                
+                                <p> 
+                                     <?php   echo  $result->fetch_assoc()['title']; ?>
+                                <?php //  echo  $result->fetch_assoc()['subtitle'] ?></p>
+                                <li><a target="_blank" href=" <?php echo  $result->fetch_assoc()['file_link'] ?>">View</a></li>
+                          
+                            <?php
+
+                                }
+                             ?>
+
+
+
                         </ul>
                     </div>
                 </div>

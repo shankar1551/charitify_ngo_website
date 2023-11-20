@@ -1,5 +1,6 @@
 <?php
 
+include './isLoggedIn.php';
 require_once "./config.php";
 
 ?>
@@ -107,7 +108,7 @@ require_once "./config.php";
                         <div class="col-sm-4 text-center"><h1 class="mt-3">Blogs</h1></div>
 
                         <div class="col-lg-12">
-                            <a class="btn btn-primary m-2" href="">Create New Blog</a>
+                            <a class="btn btn-primary m-2" href="./Createblog.php">Create New Blog</a>
                         </div>
                     </div>
                     <div class="row align-items-start">

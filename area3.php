@@ -6,7 +6,7 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 
-<!-- Mirrored from html.dynamiclayers.net/dl/charitify/gallery.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:22 GMT -->
+<!-- Mirrored from html.dynamiclayers.net/dl/charitify/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:47 GMT -->
 
 <head>
     <meta charset="utf-8">
@@ -55,7 +55,7 @@
                 <div class="top-content-wrap row">
                     <div class="col-sm-8">
                         <ul class="left-info">
-                            <li><a href="#"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="cd84a3aba28d94a2b8bf89a2a0aca4a3e3aea2a0">info@himal-i.org</span></a></li>
+                            <li><a href="#"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="d29bbcb4bd928bbda7a096bdbfb3bbbcfcb1bdbf">info@himal-i.org</span></a></li>
                             <li><a href="#"><i class="ti-mobile"></i>+977-9847012909</a></li>
                         </ul>
                     </div>
@@ -72,7 +72,8 @@
                 </div>
             </div>
         </div>
-        <!-- =============================== Header Section ============================= -->
+
+        <!-- =============================== Top Heading ============================= -->
         <div class="bottom-header">
             <div class="container">
                 <div class="bottom-content-wrap row">
@@ -84,112 +85,130 @@
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
+                            <li class="active"> <a href="index.php">Home</a>
+
+                            </li>
                             <li><a href="about.html">About</a>
                                 <ul>
-                                    <li><a href="./about.html#executives">Executive Board</a></li>
-                                    <li><a href="./about.html#staff">Staff </a></li>
-                                    <li><a href="./about.html#advisors">Advisor </a></li>
-                                    <li><a href="./about.html#coverage">Coverage </a></li>
-                                    <li><a href="./about.html#implementing">Implementing Partners </a></li>
+                                    <li><a href="./about.php#executives">Executive Board</a></li>
+                                    <li><a href="./about.php#staff">Staff </a></li>
+                                    <li><a href="./about.php#advisors">Advisor </a></li>
+                                    <li><a href="./about.php#coverage">Coverage </a></li>
+                                    <li><a href="./about.php#implementing">Implementing Partners </a></li>
                                 </ul>
                             </li>
                             <li><a href="stories.html">Impact of Stories</a></li>
-                            <li><a href="#">Strategic Areas</a>
+
+
+                            <li><a href="area1.html">Strategic Areas</a>
                                 <ul>
-                                    <li><a href="area1.html">Strategic Area 1</a></li>
-                                    <li><a href="area2.html">Strategic Area 2</a></li>
-                                    <li><a href="area3.html">Strategic Area 3</a></li>
+                                    <li><a href="area1.php">Strategic Area 1</a></li>
+                                    <li><a href="area2.php">Strategic Area 2</a></li>
+                                    <li><a href="area3.php">Strategic Area 3</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="knowledge-hub.html">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.html">Get Involved</a></li>
-                            <li> <a href="contact.html">Contact</a></li>
+                            <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
+                            <li> <a href="get-involved.php">Get Involved</a></li>
+                            <li> <a href="contact.php">Contact</a></li>
                         </ul>
+
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <!-- =============================== Header Section ============================= -->
+    <!-- =============================== Top Heading ============================= -->
 
     <div class="header-height"></div>
     <div class="pager-header">
         <div class="container">
             <div class="page-content">
-                <h2>Knowledge Hub</h2>
-                <p>Help today because tomorrow you may be the one who <br>needs more helping!</p>
+                <h2>Strategic Area 3:</h2>
+                <p>Enhancement of Ecosystem and Biodiversity</p>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Knowledge Hub</li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item active">Strategic Area 3:</li>
                 </ol>
             </div>
         </div>
     </div>
-    <section class="gallery-section bg-grey bd-bottom padding">
+
+    <!-- =============================== BODY Part ============================= -->
+    <section class="blog-section bg-grey padding">
         <div class="container">
-           <!--  <div class="row">
-                <ul class="gallery-filter align-center mb-30">
-                    <li class="active" data-filter="*">All</li>
-                    <li data-filter=".branding">Branding</li>
-                    <li data-filter=".design">Design</li>
-                    <li data-filter=".wordpress">Wordpress</li>
-                    <li data-filter=".marketing">Marketing</li>
-                </ul>
-            </div> -->
-            <div class="gallery-items row">
-                <div class="col-lg-4 col-sm-6 single-item branding design">
-                    <div class="gallery-wrap">
-                        <img src="img/gallery-1.jpg" alt="gallery">
-                        <div class="hover">
-                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-1.jpg"><i class="ti-image"></i></a>
+            <div class="row">
+                <div class="col-lg-9 sm-padding">
+                    <div class="blog-items single-post row">
+
+                        <h3>Strategic Area 3: Enhancement of Ecosystem and Biodiversity</h3>
+                        <img width="8" src="img/SA3.jpeg" alt="blog post">
+                        <p>About 86% of the total land area is covered by hills and high mountains, and the remaining 14% are the flat lands of the Terai. Despite the uniqueness and variety of ecosystems, the ecosystems are very fragile and prone to degradation
+                            both inherently and in response to anthropogenic activities. Adverse climatic conditions, excessive resource use and associated environmental degradation are responsible for the accelerated rate of natural disasters like soil
+                            erosion and land degradation which in turn are making the ecosystems insubstantial.
+                        </p>
+                        <p>To conserve and balance the relation in between human and natural resources. </p>
+                        <div class="comments-wrapper">
+
+                            <h3>Objective:</h3>
+                            <div class="comment-form">
+                                <p>The following interventions will be applied to achieve the objective of SA 3: </p>
+                                <ol>
+                                    <li>Adopt and apply nature based solutions, Ecosystem based Adaptation (EbA) and Payment for Ecosystem Services (PES) approach. </li>
+                                    <li>Support local government institutions for the effective and sustainable management of urban and rural waste.</li>
+                                    <li>Enhancement of green infrastructure in urban and rural communities.</li>
+                                    <li>Develop and implement action-research to minimize the wildlife and human conflict through building appropriate habitat and environment friendly infrastructure.
+                                    </li>
+                                    <li>Establish green tourism to minimize the carbon foot print and environment degradation in mountain communities.</li>
+                                    <li>Identify and manage sub watershed areas for the enhancement of biodiversity and livelihood services.</li>
+                                    <li>Strengthen water governance for improvement of water ecosystem</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 single-item marketing wordpress">
-                    <div class="gallery-wrap">
-                        <img src="img/gallery-2.jpg" alt="gallery">
-                        <div class="hover">
-                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-2.jpg"><i class="ti-image"></i></a>
+                <!-- =============================== BODY Part ============================= -->
+
+
+                <!-- =============================== Related Projects ============================= -->
+                <div class="col-lg-3 sm-padding">
+                    <div class="sidebar-wrap">
+                        <div class="sidebar-widget mb-50">
+                            <h4><u>Related Projects</u> </h4>
+                            <!--<ul class="recent-posts">
+                                <li>
+                                    <img src="img/Building Resiliance (2).jpeg" alt="blog post">
+                                    <div>
+                                        <h4><a href="building-resilience.html">Building Resilience of Urban Community in Nepal</a></h4>
+                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2023</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="img/Winter support.jpeg" alt="blog post">
+                                    <div>
+                                        <h4><a href="wintersupporting.html">Winter Support to Flood Affected Community of Mustang</a></h4>
+                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2023</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="img/Covid.jpeg" alt="blog post">
+                                    <div>
+                                        <h4><a href="covidrespons.html">COVID Response Project</a></h4>
+                                        <span class="date"><i class="fa fa-clock-o"></i> January 01.2023</span>
+                                    </div>
+                                </li>
+                            </ul>-->
                         </div>
+                        <!-- =============================== Related Projects ============================= -->
+
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 single-item wordpress design branding">
-                    <div class="gallery-wrap">
-                        <img src="img/gallery-3.jpg" alt="gallery">
-                        <div class="hover">
-                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-3.jpg"><i class="ti-image"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 single-item design branding wordpress">
-                    <div class="gallery-wrap">
-                        <img src="img/gallery-4.jpg" alt="gallery">
-                        <div class="hover">
-                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-4.jpg"><i class="ti-image"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 single-item branding marketing">
-                    <div class="gallery-wrap">
-                        <img src="img/gallery-5.jpg" alt="gallery">
-                        <div class="hover">
-                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-5.jpg"><i class="ti-image"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 single-item marketing design">
-                    <div class="gallery-wrap">
-                        <img src="img/gallery-6.jpg" alt="gallery">
-                        <div class="hover">
-                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-6.jpg"><i class="ti-image"></i></a>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </section>
 
+    <!-- =============================== BODY Part ============================= -->
 
 
     <section class="widget-section padding">
@@ -202,9 +221,8 @@
                         <ul class="social-icon">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -288,7 +306,7 @@
     <script src="js/main.js"></script>
     <script>
         (function() {
-            var js = "window['__CF$cv$params']={r:'8187d6055fb39884',t:'MTY5NzcwNjA4Mi40NDcwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/7ff8d35b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
+            var js = "window['__CF$cv$params']={r:'8187d6118eb59884',t:'MTY5NzcwNjA4NC4zODYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/7ff8d35b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
             var _0xh = document.createElement('iframe');
             _0xh.height = 1;
             _0xh.width = 1;
@@ -325,6 +343,6 @@
     </script>
 </body>
 
-<!-- Mirrored from html.dynamiclayers.net/dl/charitify/gallery.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:33 GMT -->
+<!-- Mirrored from html.dynamiclayers.net/dl/charitify/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:55 GMT -->
 
 </html>

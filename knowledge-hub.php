@@ -1,13 +1,14 @@
+
+<?php 
+    require_once "./adminPanel/config.php";
+?>
+
+
+
+
+
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
-
-<!-- Mirrored from html.dynamiclayers.net/dl/charitify/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:33 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,75 +56,193 @@
                 <div class="top-content-wrap row">
                     <div class="col-sm-8">
                         <ul class="left-info">
-                            <li><a href="#"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="a3eacdc5cce3faccd6d1e7cccec2cacd8dc0ccce">info@himal-i.org</span></a></li>
-                            <li><a href="#"><i class="ti-mobile"></i>+977 9847012909</a></li>
+                            <li><a href="#"><i class="ti-email"></i><span class="__cf_email__" data-cfemail="cd84a3aba28d94a2b8bf89a2a0aca4a3e3aea2a0">info@himal-i.org</span></a></li>
+                            <li><a href="#"><i class="ti-mobile"></i>+977-9847012909</a></li>
                         </ul>
                     </div>
+                    <!-- =============================== Social Media ============================= -->
                     <div class="col-sm-4 d-none d-md-block">
                         <ul class="right-info">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="https://www.facebook.com/HIFSRS" target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
+                    <!-- =============================== Social Media ============================= -->
                 </div>
             </div>
         </div>
+        <!-- =============================== Header Section ============================= -->
         <div class="bottom-header">
             <div class="container">
                 <div class="bottom-content-wrap row">
                     <div class="col-sm-4">
                         <div class="site-branding">
-                            <a href="#"><img src="img/logo.png" alt="Brand"></a>
+                            <a href="index.php"><img src="img/logo.png" alt="Brand"></a>
+                            <p>For Sustainable And Resilient Society</p>
                         </div>
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a>
+                            <li class="active"> <a href="index.php">Home</a>
+
+                            </li>
+                            <li><a href="about.html">About</a>
                                 <ul>
-                                    <li><a href="index.html">Home Default</a></li>
-                                    <li><a href="index-2.html">Home Modern</a></li>
+                                    <li><a href="./about.php#executives">Executive Board</a></li>
+                                    <li><a href="./about.php#staff">Staff </a></li>
+                                    <li><a href="./about.php#advisors">Advisor </a></li>
+                                    <li><a href="./about.php#coverage">Coverage </a></li>
+                                    <li><a href="./about.php#implementing">Implementing Partners </a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="causes.html">Causes</a></li>
-                            <li><a href="event.html">Event</a></li>
-                            <li><a href="#">Pages</a>
+                            <li><a href="stories.html">Impact of Stories</a></li>
+
+
+                            <li><a href="area1.html">Strategic Areas</a>
                                 <ul>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="team.html">Volunteers</a></li>
-                                    <li><a href="404.html">404 Not Found</a></li>
+                                    <li><a href="area1.php">Strategic Area 1</a></li>
+                                    <li><a href="area2.php">Strategic Area 2</a></li>
+                                    <li><a href="area3.php">Strategic Area 3</a></li>
                                 </ul>
                             </li>
-                            <li><a href="blog-grid.html">Blog</a>
-                                <ul>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li> <a href="contact.html">Contact</a></li>
+                            <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
+                            <li> <a href="get-involved.php">Get Involved</a></li>
+                            <li> <a href="contact.php">Contact</a></li>
                         </ul>
-                        <a href="#" class="default-btn">Donet Now</a>
+
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- =============================== Header Section ============================= -->
+
     <div class="header-height"></div>
-    <section class="error-section padding">
+    <div class="pager-header">
         <div class="container">
-            <div class="error-content text-center">
-                <h2>404!</h2>
-                <h5>Oops! Page Not Found</h5>
-                <p>The page you were looking for could not be found.</p>
-                <a href="index.html" class="default-btn">Back to Home</a>
+            <div class="page-content">
+                <h2>Knowledge Hub</h2>
+                <p>Help today because tomorrow you may be the one who <br>needs more helping!</p>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Knowledge Hub</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <section class="gallery-section bg-grey bd-bottom padding">
+        <div class="container">
+           <!--  <div class="row">
+                <ul class="gallery-filter align-center mb-30">
+                    <li class="active" data-filter="*">All</li>
+                    <li data-filter=".branding">Branding</li>
+                    <li data-filter=".design">Design</li>
+                    <li data-filter=".wordpress">Wordpress</li>
+                    <li data-filter=".marketing">Marketing</li>
+                </ul>
+            </div> -->
+            <div class="gallery-items row">
+                
+
+                            <?php
+
+                                $sql = "SELECT * from gallery";
+                                 $result = $link->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                  // output data of each row
+                                  while($row = $result->fetch_assoc()) {
+                            ?>
+
+
+                <div class="col-lg-4 col-sm-6 single-item branding design">
+                    <div class="gallery-wrap">
+                        <img src="./adminPanel/upload/gallery/<?php echo $row['file_link'] ?>" alt="gallery">
+                        <div class="hover">
+                            <a class="img-popup" data-gall="galleryimg" href="./adminPanel/upload/gallery/<?php echo $row['file_link'] ?>"><i class="ti-image"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                            <?php 
+                             }
+                                }else 
+                                {
+                               
+                            ?>
+
+
+
+                            <div class="col-md-12 padding-15">
+                                <div class="blog-post">
+                                    <h3>No Gallery Imaes for now. Stay Tuned..</h3>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <?php
+
+                                } 
+                            ?>
+
+
+
+                <!-- <div class="col-lg-4 col-sm-6 single-item marketing wordpress">
+                    <div class="gallery-wrap">
+                        <img src="img/gallery-2.jpg" alt="gallery">
+                        <div class="hover">
+                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-2.jpg"><i class="ti-image"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 single-item wordpress design branding">
+                    <div class="gallery-wrap">
+                        <img src="img/gallery-3.jpg" alt="gallery">
+                        <div class="hover">
+                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-3.jpg"><i class="ti-image"></i></a>
+                        </div>
+                    </div>
+                </div> -->
+<!--                 <div class="col-lg-4 col-sm-6 single-item design branding wordpress">
+                    <div class="gallery-wrap">
+                        <img src="img/gallery-4.jpg" alt="gallery">
+                        <div class="hover">
+                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-4.jpg"><i class="ti-image"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 single-item branding marketing">
+                    <div class="gallery-wrap">
+                        <img src="img/gallery-5.jpg" alt="gallery">
+                        <div class="hover">
+                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-5.jpg"><i class="ti-image"></i></a>
+                        </div>
+                    </div>
+                </div> -->
+               <!--  <div class="col-lg-4 col-sm-6 single-item marketing design">
+                    <div class="gallery-wrap">
+                        <img src="img/gallery-6.jpg" alt="gallery">
+                        <div class="hover">
+                            <a class="img-popup" data-gall="galleryimg" href="img/gallery-6.jpg"><i class="ti-image"></i></a>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </section>
+
+
+
     <section class="widget-section padding">
         <div class="container">
             <div class="widget-wrap row">
@@ -220,7 +339,7 @@
     <script src="js/main.js"></script>
     <script>
         (function() {
-            var js = "window['__CF$cv$params']={r:'8187d6096d009884',t:'MTY5NzcwNjA4My4wODkwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/7ff8d35b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
+            var js = "window['__CF$cv$params']={r:'8187d6055fb39884',t:'MTY5NzcwNjA4Mi40NDcwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/7ff8d35b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
             var _0xh = document.createElement('iframe');
             _0xh.height = 1;
             _0xh.width = 1;
@@ -257,6 +376,6 @@
     </script>
 </body>
 
-<!-- Mirrored from html.dynamiclayers.net/dl/charitify/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:33 GMT -->
+<!-- Mirrored from html.dynamiclayers.net/dl/charitify/gallery.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:33 GMT -->
 
 </html>

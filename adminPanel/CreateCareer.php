@@ -1,5 +1,7 @@
 <?php
 
+include './isLoggedIn.php';
+
 
 
 # Processing form data when form is submitted

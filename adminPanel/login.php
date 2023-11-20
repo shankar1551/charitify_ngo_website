@@ -4,7 +4,7 @@ session_start();
 
 # Check if user is already logged in, If yes then redirect him to index page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == TRUE) {
-  echo "<script>" . "window.location.href='./'" . "</script>";
+  echo "<script>" . "window.location.href='./index.php'" . "</script>";
   exit;
 }
 
