@@ -38,19 +38,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   }
 
    
+   $caption = trim($_POST["caption"]);
 
 
 
-
-
+// echo "reachced 45"; die();
   # checking for error and save the data  
     if(empty($img_err))
     {
 
         //if no errors store the values in db 
-         # Prepare a select statement
-        $sql = "INSERT INTO `gallery` (`file_link`, `createtd_at`)";
-        $sql.= "VALUES ('{$img}', current_timestamp())";
+
+        $sql = "INSERT INTO `gallery` (`file_link`,`caption`,`createtd_at`)";
+        $sql.= "VALUES ('{$img}','{$caption}', current_timestamp())";
 
         if (mysqli_query($link, $sql))
         {
@@ -149,9 +149,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li><a href="stories.html">Impact of Stories Create/ Delete</a></li>
-                            <li> <a href="contact.html">Logout</a></li>
+                            <li class="active"> <a href="../index.php">Home</a></li>
+                            <li><a href="./index.php">Dashboard</a></li>
+                            <li> <a href="logout.php">Logout</a></li>
                         </ul>
 
                     </div>
@@ -194,6 +194,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                             <label for="exampleFormControlFile1">Image</label>
                             <input type="file" class="form-control-file" id="image" name="image">
                           </div>
+
+                          <div class="form-group">
+                            <h4 class=" alert-danger" role="alert">
+                                <?php
+                                  if (!empty($image_err)) 
+                                      echo $title_err ;
+                                ?>  
+                            </h4>
+                            <label for="exampleFormControlFile1">Caption</label>
+                            <input type="text" class="form-control" id="caption" name="caption" placeholder="Write Your  Caption here">
+                          </div>
+
                           <br><br>
 
                           <!-- Second part -->

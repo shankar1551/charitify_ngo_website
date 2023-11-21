@@ -168,9 +168,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li><a href="stories.html">Impact of Stories Create/ Delete</a></li>
-                            <li> <a href="contact.html">Logout</a></li>
+                            <li class="active"> <a href="../index.php">Home</a></li>
+                            <li><a href="./index.php">Dashboard</a></li>
+                            <li> <a href="logout.php">Logout</a></li>
                         </ul>
 
                     </div>

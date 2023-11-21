@@ -85,9 +85,9 @@ require_once "./config.php";
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li><a href="stories.html">Impact of Stories Create/ Delete</a></li>
-                            <li> <a href="contact.html">Logout</a></li>
+                            <li class="active"> <a href="../index.php">Home</a></li>
+                            <li><a href="./index.php">Dashboard</a></li>
+                            <li> <a href="logout.php">Logout</a></li>
                         </ul>
 
                     </div>
@@ -128,12 +128,6 @@ require_once "./config.php";
 
                                 <div class="col-sm-4">
                                     <div class="blog-grid">
-                                        <div class="blog-img">
-                                            
-                                           <!--  <a href="#">
-                                                <img src="./upload/<?php //echo $row['image1'];  ?>" title="" alt="">
-                                            </a> -->
-                                        </div>
                                         <div class="blog-info">
                                             <h5><a href="#">
                                                 <?php
@@ -147,22 +141,14 @@ require_once "./config.php";
                                                 ?>
                                             </p>
                                             <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow m-3">
-                                                    <span><a href="" class="btn btn-success">View PDF</a></span>
-                                                    <i class="arrow"></i>
+                                                <a href="./upload/career/<?php echo $row['file_link'] ?>" target="_blank" class="btn btn-success m-2" style="width:100%">View PDF</a>
+                                                <a href="#" class=" btn btn-danger m-2" style="width:100%">
+                                                   Delete
                                                 </a>
-                                               
-                                                <a href="#" class=" btn px-btn-arrow btn-danger m-3">
-                                                    <span>Delete</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
 
                             <?php 
                              }

@@ -18,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   } else {
         $title = trim($_POST["title"]);
 
-        $title = preg_replace('/[^A-Za-z0-9-]+/', '-', $title);
+        $title = str_replace(' ', '-', $title);
+
+
 
         //check if similar title exist in db
         $result = $link->query("  SELECT 1 FROM blogs WHERE title={$title} LIMIT 1 ");
@@ -27,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         } 
 
   }
-
 
 
   if (empty(trim($_POST["sub_title"]))) {
@@ -132,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           
            move_uploaded_file($_FILES["image_3"]["tmp_name"],"./upload/" . $_FILES["image_3"]["name"]);
            echo "Stored in: " . "upload/" . $_FILES["image_3"]["name"];
-           $img2 = $_FILES["image_3"]["name"]; 
+           $img3 = $_FILES["image_3"]["name"]; 
         }
       }
   else
@@ -258,9 +259,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li><a href="stories.html">Impact of Stories Create/ Delete</a></li>
-                            <li> <a href="contact.html">Logout</a></li>
+                            <li class="active"> <a href="../index.php">Home</a></li>
+                            <li><a href="./index.php">Dashboard</a></li>
+                            <li> <a href="logout.php">Logout</a></li>
                         </ul>
 
                     </div>

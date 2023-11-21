@@ -15,7 +15,7 @@ $sql = "SELECT * from blogs where title='{$story_slug}'";
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content>
     <meta name="author" content="DynamicLayers">
@@ -104,7 +104,7 @@ $sql = "SELECT * from blogs where title='{$story_slug}'";
                                     <li><a href="./about.php#implementing">Implementing Partners </a></li>
                                 </ul>
                             </li>
-                            <li><a href="stories.html">Impact of Stories</a></li>
+                            <li><a href="stories.php">Impact of Stories</a></li>
 
 
                             <li><a href="area1.html">Strategic Areas</a>
@@ -132,7 +132,7 @@ $sql = "SELECT * from blogs where title='{$story_slug}'";
     <div class="pager-header">
         <div class="container">
             <div class="page-content">
-                <h2><?php echo $data['subtitle'] ?><h2>
+                <h2 class="" style="line-height: 65px;"><?php echo $data['subtitle'] ?><h2>
                 <p></p>
                 <!-- <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -148,68 +148,61 @@ $sql = "SELECT * from blogs where title='{$story_slug}'";
             <div class="row justify-content-center">
                 <div class="col-lg-9 sm-padding">
                     <div class="blog-items single-post row">
-
-                           
-
-                        <h3>
-                            <?php echo $data['subtitle']  ?>
-
-                        </h3>
-                        <img src="./adminPanel/upload/<?php echo $data['image1']  ?>" alt="blog post">
-
-                        <p>
-                            <?php echo $data['para1']; ?>
-                        </p>
-
-
-                         <?php
-                         if(!empty($data['image2']))
-                         {
-                        ?>
-                            <br>
-                            <img src="./adminPanel/upload/<?php echo $data['image2']  ?>" alt="blog post">
-
-                        <?php  } ?>
-
-
-                        <!-- if the second part of blog paresent then display it -->
-                        <?php
-                         if(!empty($data['para2']))
-                         {
-                        ?>
+                        <div class="col-12 m-2">
                             
-                            <br><br>
-                            <p>
-                                <?php echo $data['para2']; ?>
-                            </p>
+                            <h2 style="line-height: 65px;">
+                                <?php echo $data['subtitle']  ?>
+                            </h2>
+                        </div>
 
-                        <?php  } ?>
+                        <div class="col-12 m-2">
+                            <img class="p-4" src="./adminPanel/upload/<?php echo $data['image1']  ?>" alt="blog post">
+                        </div>
 
+                        <div class="col-12 m-2">
+                             <p> <?php echo $data['para1']; ?> </p>
+                        </div>
+                        <div class="col-12">
+                            
+                            <?php
+                                 if(!empty($data['image2']))
+                                 {
+                            ?>
+                                    <br>
+                                    <img class="p-4" src="./adminPanel/upload/<?php echo $data['image2']  ?>" alt="blog post">
+                            <?php  } ?>
+                        </div>
 
+                        <div class="col-12 m-2">
+                            
+                             <?php
+                                 if(!empty($data['para2']))
+                                 {
+                                ?>                                    
+                                    <p> <?php echo $data['para2']; ?></p>
 
+                                <?php  } ?>
 
+                        </div>
 
+                        <div class="col-12 m-3">
+                            
+                            <?php
+                                if(!empty($data['image3'])){
+                            ?>
+                                <img class="p-4" src="./adminPanel/upload/<?php echo $data['image3']  ?>" alt="blog post">
+                            <?php  } ?>
+                        </div>
 
-                        <?php
-                             if(!empty($data['image3'])){
-                        ?>
-                            <br><br><br>
-                            <img src="./adminPanel/upload/<?php echo $data['image3']  ?>" alt="blog post">
-
-                        <?php  } ?>
-
-
-
-                         <!-- if the third part of blog paresent then display it -->
-                        <?php
+                        <div class="col-12">
+                            <?php
                          if(!empty($data['para3'])) {
                         ?>
-                            <br><br>
                             <p> <?php echo $data['para3']; ?> </p>
                         <?php } ?>
-
-
-
+                        </div>
+                           
+                    
 
 
                     
@@ -254,139 +247,5 @@ $sql = "SELECT * from blogs where title='{$story_slug}'";
     </section>
     <!-- =============================== BODY Part ============================= -->
 
-    <section class="widget-section padding">
-        <div class="container">
-            <div class="widget-wrap row">
-                <div class="col-md-4 xs-padding">
-                    <div class="widget-content">
-                        <img src="img/logo-light.png" alt="logo">
-                        <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor</p>
-                        <ul class="social-icon">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 xs-padding">
-                    <div class="widget-content">
-                        <h3>Recent Campaigns</h3>
-                        <ul class="widget-link">
-                            <li><a href="#">First charity activity of this summer. <span>-1 Year Ago</span></a></li>
-                            <li><a href="#">Big charity: build school for poor children. <span>-2 Year Ago</span></a></li>
-                            <li><a href="#">Clean-water system for rural poor. <span>-2 Year Ago</span></a></li>
-                            <li><a href="#">Nepal earthqueak donation campaigns. <span>-3 Year Ago</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 xs-padding">
-                    <div class="widget-content">
-                        <h3>Charitify Location</h3>
-                        <ul class="address">
-                            <li><i class="ti-email"></i> <a href="https://html.dynamiclayers.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3eacdc5cce3faccd6d1e7cccec2cacd8dc0ccce">info@himal-i.org</a></li>
-                            <li><i class="ti-mobile"></i> +977 9847012909</li>
-                            <li><i class="ti-world"></i> www.himal-i.org</li>
-                            <li><i class="ti-location-pin"></i> Head Office: Gharapjhong-4, Mustang<br>Program Coordination Office: Kathmandu, Nepal</li>
 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 sm-padding">
-                    <div class="copyright">Copyright © 2023 : Goldweb International | All Rights Reserved. </div>
-                </div>
-                <div class="col-md-6 sm-padding">
-                    <ul class="footer-social">
-                        <li><a href="#">Orders</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Report Problem</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <a data-scroll href="#header" id="scroll-to-top"><i class="arrow_up"></i></a>
-
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-
-    <script src="js/vendor/bootstrap.min.js"></script>
-
-    <script src="js/vendor/tether.min.js"></script>
-
-    <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
-
-    <script src="js/vendor/owl.carousel.min.js"></script>
-
-    <script src="js/vendor/jquery.isotope.v3.0.2.js"></script>
-
-    <script src="js/vendor/smooth-scroll.min.js"></script>
-
-    <script src="js/vendor/venobox.min.js"></script>
-
-    <script src="js/vendor/jquery.ajaxchimp.min.js"></script>
-
-    <script src="js/vendor/jquery.counterup.min.js"></script>
-
-    <script src="js/vendor/jquery.waypoints.v2.0.3.min.js"></script>
-
-    <script src="js/vendor/jquery.slicknav.min.js"></script>
-
-    <script src="js/vendor/jquery.nivo.slider.pack.js"></script>
-
-    <script src="js/vendor/letteranimation.min.js"></script>
-
-    <script src="js/vendor/wow.min.js"></script>
-
-    <script src="js/contact.js"></script>
-
-    <script src="js/main.js"></script>
-    <script>
-        (function() {
-            var js = "window['__CF$cv$params']={r:'8187d6118eb59884',t:'MTY5NzcwNjA4NC4zODYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/b/scripts/jsd/7ff8d35b/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
-            var _0xh = document.createElement('iframe');
-            _0xh.height = 1;
-            _0xh.width = 1;
-            _0xh.style.position = 'absolute';
-            _0xh.style.top = 0;
-            _0xh.style.left = 0;
-            _0xh.style.border = 'none';
-            _0xh.style.visibility = 'hidden';
-            document.body.appendChild(_0xh);
-
-            function handler() {
-                var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;
-                if (_0xi) {
-                    var _0xj = _0xi.createElement('script');
-                    _0xj.innerHTML = js;
-                    _0xi.getElementsByTagName('head')[0].appendChild(_0xj);
-                }
-            }
-            if (document.readyState !== 'loading') {
-                handler();
-            } else if (window.addEventListener) {
-                document.addEventListener('DOMContentLoaded', handler);
-            } else {
-                var prev = document.onreadystatechange || function() {};
-                document.onreadystatechange = function(e) {
-                    prev(e);
-                    if (document.readyState !== 'loading') {
-                        document.onreadystatechange = prev;
-                        handler();
-                    }
-                };
-            }
-        })();
-    </script>
-</body>
-
-<!-- Mirrored from html.dynamiclayers.net/dl/charitify/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Oct 2023 09:02:55 GMT -->
-
-</html>
-
+<?php include("./footer.php");?>

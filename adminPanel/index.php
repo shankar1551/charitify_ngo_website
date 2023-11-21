@@ -80,10 +80,9 @@
                     </div>
                     <div class="col-sm-8 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li><a href="stories.html">Blogs</a></li>
-                            <li><a href="stories.html">Carrier</a></li>
-                            <li> <a href="./logout.php">Logout</a></li>
+                            <li class="active"> <a href="../index.php">Home</a></li>
+                            <li><a href="./index.php">Dashboard</a></li>
+                            <li> <a href="logout.php">Logout</a></li>
                         </ul>
 
                     </div>
@@ -96,66 +95,62 @@
 
 
     <!-- ===============admin menu cards========================== -->
-    <div class="row bg-dark">
+    <div class="row" >
       <div class="col-lg-10 m-auto">
-        
-        
-      <div class="row  justify-content-center">
-        <div class="col-md-3 p-2 col-sm-2">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+ 
+      <div class="row justify-content-center" style="height: 70vh;" >
+
+        <div class="col-12 bg-light justify-content-center mt-4" style="height:10vh;">
+                <h3 class="p-2 text-center">
+                    Welcome Admin 
+                </h3>
+        </div>
+
+
+
+
+
+        <div class="col-md-3 col-sm-2 col-lg-3 p-2 m-4">
+            <div class="card justify-content-center" >
+            <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+            <i class="fa fa-wrench" aria-hidden="true" style="height: 100%; width: 100%; font-size: 80px; padding-left: 40%;"></i>
+
             <div class="card-body">
-              <h3 class="card-title text-center">Blogs</h3>
+              <h3 class="card-title text-center">Blogs/Stories</h3>
               <!-- <p class="text to build on the card title and make up the bulk of the card's content.</p> -->
-              <div class="text-center"><a href="#" class="btn btn-primary text-center">Go somewhere</a> </div>
+              <div class="text-center"><a href="./blogs.php" class="btn btn-primary text-center">Manage</a> </div>
             </div>
           </div>
         </div>
 
-        <div class=" col-md-3 p-2 col-sm-2">
-           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+
+        <div class=" col-md-3 p-2 col-sm-2 m-4" style="height:90px !important">
+           <div class="card">
+            <i class="fa fa-wrench" aria-hidden="true" style="height: 100%; width: 100%; font-size: 80px; padding-left: 40%;"></i>
             <div class="card-body">
               <h3 class="card-title text-center">Carrier</h3>
               <!-- <p class="card-text">Some  to build on the card title and make up the bulk of the card's content.</p> -->
-              <div class="text-center"><a href="#" class="btn btn-primary text-center">Go somewhere</a> </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 p-2 col-sm-2 ">
-           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title text-center">Knowledge Hub</h3>
-              <!-- <p class="card-text">Some to build on the card title and make up the bulk of the card's content.</p> -->
-              <div class="text-center"><a href="#" class="btn btn-primary text-center">Go somewhere</a> </div>
+              <div class="text-center"><a href="./career.php" class="btn btn-primary text-center">Manage</a> </div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3 p-2 col-sm-2"> <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <!-- <p class="card-text">o build on the card title and make up the bulk of the card's content.</p> -->
-              <div class="text-center"><a href="#" class="btn btn-primary text-center">Go somewhere</a> </div>
+        <div class="col-md-3 p-2 col-sm-2 m-4" style="height:90px">
+           <div class="card" >
+                <i class="fa fa-wrench" aria-hidden="true" style="height: 100%; width: 100%; font-size: 80px; padding-left: 40%;"></i>            <div class="card-body">
+              <h3 class="card-title text-center">Gallery</h3>
+              <!-- <p class="card-text">Some to build on the card title and make up the bulk of the card's content.</p> -->
+              <div class="text-center"><a href="gallery.php" class="btn btn-primary text-center">Manage</a> </div>
             </div>
           </div>
-        </div>  
+        </div>
 
       </div>
-
-        
-
-
-
 
       </div>
     </div>
 
-
-
-
+   
 
 
 
