@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
         //check if similar title exist in db
-        $result = $link->query("  SELECT 1 FROM blogs WHERE title={$title} LIMIT 1 ");
+        $result = $link->query("SELECT count('id') FROM blogs WHERE 'title'='{$title}' LIMIT 1 ");
         if ($result->num_rows > 0) {
              $title_err = "Title is duplicate please selact a new title";
         } 

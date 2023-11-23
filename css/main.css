@@ -1045,8 +1045,9 @@
         background-attachment: scroll;
         background-position: center center;
         -webkit-background-size: cover;
-        background-size: cover;
+/*        background-size: 100%;*/
         padding: 150px 0;
+        width: 500px;
     }
     
     .campaigns-wrap h4 {

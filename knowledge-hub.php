@@ -100,7 +100,7 @@
                             <li><a href="stories.php">Impact of Stories</a></li>
 
 
-                            <li><a href="area1.html">Strategic Areas</a>
+                            <li><a href="area1.php">Strategic Areas</a>
                                 <ul>
                                     <li><a href="area1.php">Strategic Area 1</a></li>
                                     <li><a href="area2.php">Strategic Area 2</a></li>
@@ -146,41 +146,59 @@
             <div class="gallery-items row">
                 
 
-                            <?php
+            <?php
+                    //define total number of results you want per page  
+                $results_per_page = 1;  
+              
+                //find the total number of results stored in the database  
+                $query = "select * from gallery";  
+                $result = mysqli_query($link, $query);  
+                $number_of_result = mysqli_num_rows($result);  
+              // echo $number_of_result;
+                //determine the total number of pages available  
+                $number_of_page = ceil ($number_of_result / $results_per_page);  
+              
+                //determine which page number visitor is currently on  
+                if (!isset ($_GET['page']) ) {  
+                    $page = 1;  
+                } else {  
+                    $page = $_GET['page'];  
+                }  
 
-                                $sql = "SELECT * from gallery";
-                                 $result = $link->query($sql);
+                // //determine the sql LIMIT starting number for the results on the displaying page  
+                $page_first_result = ($page-1) * $results_per_page;  
+              
+                // //retrieve the selected results from database   
+                $query = "SELECT *FROM gallery LIMIT " . $page_first_result . ',' . $results_per_page;  
+                $result = mysqli_query($link, $query);  
+                  
+                //display the retrieved result on the webpage  
+                  if ($result->num_rows > 0) {
+                        while ($row = mysqli_fetch_array($result)) { 
 
-                                if ($result->num_rows > 0) {
-                                  // output data of each row
-                                  while($row = $result->fetch_assoc()) {
-                            ?>
+                        ?>
 
-
-                <div class="col-lg-4 col-sm-6 single-item branding design mb-4">
-                    <div class="gallery-wrap" style="text-align:center;">
-                        <img src="./adminPanel/upload/gallery/<?php echo $row['file_link'] ?>" alt="gallery">
-                        <strong class="" style="font-size: 12px;">abc</strong>
-                        <div class="hover">
-                            <a class="img-popup" data-gall="galleryimg" href="./adminPanel/upload/gallery/<?php echo $row['file_link'] ?>"><i class="ti-image"></i></a> 
-                            <figcaption class="customCaption">
-                              <p class="img_name">Image Name 1</p>
-                              <p>Caption 1</p>
-                            </figcaption>
-
-
-                        </div>
-                    </div>
-                </div>
+                            <div class="col-lg-4 col-sm-6 single-item branding design mb-4">
+                                <div class="gallery-wrap" style="text-align:center;">
+                                    <img src="./adminPanel/upload/gallery/<?php echo $row['file_link'] ?>" alt="gallery">
+                                    <strong class="" style="font-size: 12px;"><?php echo $row['caption'] ?></strong>
+                                    <div class="hover">
+                                        <a class="img-popup" data-gall="galleryimg" href="./adminPanel/upload/gallery/<?php echo $row['file_link']?>"><i class="ti-image"></i></a>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
-                            <?php 
-                             }
-                                }else 
-                                {
-                               
-                            ?>
+
+                        <?php
+                        }  
+                          
+              
+                //display the link of the pages in URL  
+                
+            } else{
+            ?>
 
                             <div class="col-md-12 padding-15">
                                 <div class="blog-post">
@@ -188,13 +206,21 @@
                                 </div>
                             </div>
 
+        <?php
+            }
 
-                            <?php
-
-                                } 
-                            ?>
-
+             ?>
             </div>
+
+            
+        <?php 
+            for($page = 1; $page<= $number_of_page; $page++) {  
+                    echo '<a href = "./knowledge-hub.php?page=' . $page . '">' . $page . ' </a>';  
+                }
+        ?>
+              
+
+
         </div>
     </section>
 

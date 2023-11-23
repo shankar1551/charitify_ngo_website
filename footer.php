@@ -35,7 +35,7 @@
                                 </h4>
                                 <p><?php   echo  $data['subtitle']; ?> </p>
                                 <li>
-                                    <a class="btn btn-success " style="width:50%" target="_blank" href="adminPanel/upload/career/<?php  echo $data['file_link'];
+                                    <a class="" style="width:50%; color:#87CEEB" target="_blank;" href="adminPanel/upload/career/<?php  echo $data['file_link'];
                                         ?>">View PDF
                                     </a>
                                 </li>

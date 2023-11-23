@@ -94,7 +94,7 @@
                             <li><a href="stories.php">Impact of Stories</a></li>
 
 
-                            <li><a href="area1.html">Strategic Areas</a>
+                            <li><a href="area1.php">Strategic Areas</a>
                                 <ul>
                                     <li><a href="area1.php">Strategic Area 1</a></li>
                                     <li><a href="area2.php">Strategic Area 2</a></li>
@@ -136,7 +136,7 @@
 
                             <?php
 
-                                $sql = "SELECT * from blogs";
+                                $sql = "SELECT * from blogs   ORDER BY id DESC;";
                                  $result = $link->query($sql);
 
                                 if ($result->num_rows > 0) {

@@ -37,6 +37,7 @@
 </head>
 
 <body>
+
     <div class="site-preloader-wrap">
         <div class="spinner"></div>
     </div>
@@ -92,7 +93,7 @@
                             <li><a href="stories.php">Impact of Stories</a></li>
 
 
-                            <li><a href="area1.html">Strategic Areas</a>
+                            <li><a href="area1.php">Strategic Areas</a>
                                 <ul>
                                     <li><a href="area1.php">Strategic Area 1</a></li>
                                     <li><a href="area2.php">Strategic Area 2</a></li>
@@ -246,7 +247,7 @@
 
 
     <!-- =============================== Featured Campaigns ============================= -->
-    <section class="campaigns-section bd-bottom">
+    <section class="campaigns-section bd-bottom bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 xs-padding">
