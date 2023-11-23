@@ -148,7 +148,7 @@
 
             <?php
                     //define total number of results you want per page  
-                $results_per_page = 1;  
+                $results_per_page = 3;  
               
                 //find the total number of results stored in the database  
                 $query = "select * from gallery";  
@@ -212,14 +212,26 @@
              ?>
             </div>
 
-            
-        <?php 
-            for($page = 1; $page<= $number_of_page; $page++) {  
-                    echo '<a href = "./knowledge-hub.php?page=' . $page . '">' . $page . ' </a>';  
-                }
-        ?>
-              
 
+
+        <ul class="pagination_wrap align-center mt-30">
+            <?php
+                if (!isset ($_GET['page']) ) {  
+                    $activePage = 1;  
+                } else {  
+                    $activePage = $_GET['page'];  
+                } 
+
+
+                for($page = 1; $page<= $number_of_page; $page++) { 
+                    if($page ==$activePage)
+                      echo '<li><a class="active" href = "./knowledge-hub.php?page=' . $page . '">' . $page . ' </a></li>';   
+                    else
+                    echo '<li><a class="" href = "./knowledge-hub.php?page=' . $page . '">' . $page . ' </a></li>';  
+                    }
+            ?>
+                   
+         </ul>
 
         </div>
     </section>
