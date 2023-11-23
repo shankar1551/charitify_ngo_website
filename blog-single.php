@@ -87,7 +87,7 @@
                                     <li><a href="index-2.html">Home Modern</a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="about.php">About</a></li>
                             <li><a href="causes.html">Causes</a></li>
                             <li><a href="event.html">Event</a></li>
                             <li><a href="#">Pages</a>

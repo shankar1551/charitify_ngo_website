@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -81,7 +80,7 @@
                             <li class="active"> <a href="index.php">Home</a>
 
                             </li>
-                            <li><a href="about.html">About</a>
+                            <li><a href="about.php">About</a>
                                 <ul>
                                     <li><a href="./about.php#executives">Executive Board</a></li>
                                     <li><a href="./about.php#staff">Staff </a></li>
@@ -101,7 +100,6 @@
                                 </ul>
                             </li>
                             <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.php">Get Involved</a></li>
                             <li> <a href="contact.php">Contact</a></li>
                         </ul>
 
@@ -111,6 +109,9 @@
         </div>
     </header>
     <!-- =============================== Header Section ============================= -->
+    
+<div style="max-width: 1900px; margin: auto;">
+
     <div class="header-height"></div>
 
     <!-- =============================== Top Main Background ============================= -->
@@ -199,7 +200,7 @@
                             <h3>Strategic Area 1:</h3>
                             <p>Resilience to Climate Change and Disaster Risk</p>
 
-                            <a href="area1.html" class="default-btn">Read More</a>
+                            <a href="area1.php" class="default-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -218,7 +219,7 @@
                             <p>Sustainable Livelihood
                             </p><br>
 
-                            <a href="area2.html" class="default-btn">Read More</a>
+                            <a href="area2.php" class="default-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -236,7 +237,7 @@
                             <h3>Strategic Area 3:</h3>
                             <p>Enhancement of Ecosystem and Biodiversity</p>
 
-                            <a href="area3.html" class="default-btn">Read More</a>
+                            <a href="area3.php" class="default-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -247,20 +248,24 @@
 
 
     <!-- =============================== Featured Campaigns ============================= -->
-    <section class="campaigns-section bd-bottom bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 xs-padding">
-                    <div class="campaigns-wrap">
-                        <h4>Featured Campaigns</h4>
-                        <h2>Featured project to built a School.</h2>
-                        <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor, the abused and the helpless.</p>
+    <section class="campaigns-section bd-bottom ">
+        <div id="campaigns-section" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 xs-padding">
+                        <div class="campaigns-wrap">
+                            <h4>Featured Campaigns</h4>
+                            <h2>Featured project to built a School.</h2>
+                            <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor, the abused and the helpless.</p>
 
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
+
+        
     </section>
     <!-- =============================== Featured Campaigns ============================= -->
 
@@ -378,7 +383,7 @@
     <!-- =============================== Implementing Partners ============================= -->
 
 
-
+</div>
 
 <!-- =====================Footer====================== -->
 <?php include("./footer.php");?>

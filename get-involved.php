@@ -90,7 +90,7 @@
                             <li class="active"> <a href="index.php">Home</a>
 
                             </li>
-                            <li><a href="about.html">About</a>
+                            <li><a href="about.php">About</a>
                                 <ul>
                                     <li><a href="./about.php#executives">Executive Board</a></li>
                                     <li><a href="./about.php#staff">Staff </a></li>
@@ -110,7 +110,7 @@
                                 </ul>
                             </li>
                             <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.php">Get Involved</a></li>
+                             
                             <li> <a href="contact.php">Contact</a></li>
                         </ul>
 

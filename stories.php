@@ -82,7 +82,7 @@
                             <li class="active"> <a href="index.php">Home</a>
 
                             </li>
-                            <li><a href="about.html">About</a>
+                            <li><a href="about.php">About</a>
                                 <ul>
                                     <li><a href="./about.php#executives">Executive Board</a></li>
                                     <li><a href="./about.php#staff">Staff </a></li>
@@ -102,7 +102,6 @@
                                 </ul>
                             </li>
                             <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.php">Get Involved</a></li>
                             <li> <a href="contact.php">Contact</a></li>
                         </ul>
 
@@ -197,13 +196,7 @@
                             ?>
                            
                         </div>
-                       <!--  <ul class="pagination_wrap align-center mt-30">
-                            <li><a href="#"><i class="ti-arrow-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#" class="active">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#"><i class="ti-arrow-right"></i></a></li>
-                        </ul> -->
+                     
                     </div>
                 </div>
             </div>

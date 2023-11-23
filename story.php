@@ -115,7 +115,6 @@ $sql = "SELECT * from blogs where title='{$story_slug}'";
                                 </ul>
                             </li>
                             <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.php">Get Involved</a></li>
                             <li> <a href="contact.php">Contact</a></li>
                         </ul>
 

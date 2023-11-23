@@ -1040,14 +1040,24 @@
    ========================================================================== */
     
     .campaigns-section {
+/*        background-image: url(../img/featured-bg.jpg);*/
+/*        background-repeat: no-repeat;*/
+/*        background-attachment: scroll;*/
+/*        background-position: center center;*/
+/*        -webkit-background-size: cover;*/
+/*        background-size: cover;*/
+/*        padding: 150px 0;*/
+    }
+
+    #campaigns-section
+    {
         background-image: url(../img/featured-bg.jpg);
         background-repeat: no-repeat;
         background-attachment: scroll;
         background-position: center center;
         -webkit-background-size: cover;
-/*        background-size: 100%;*/
+/*        background-size: cover;*/
         padding: 150px 0;
-        width: 500px;
     }
     
     .campaigns-wrap h4 {

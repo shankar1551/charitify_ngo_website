@@ -1,91 +1,6 @@
-<?php
-
-include './isLoggedIn.php';
-
-# Processing form data when form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-
-    //importing th conntion
-    require_once "./config.php";
-
-
-  // ================form valiation=====================
-  if (empty(trim($_POST["title"]))) {
-    $title_err = "Title is missing";
-  } else {
-    $title = trim($_POST["title"]);
-  }
-
-
-
-  if (empty(trim($_POST["sub_title"]))) {
-    $sub_title = "";
-  } else {
-    $sub_title = trim($_POST["sub_title"]);
-  }
-
-
-
-   //valting the pdf file
-   // check if pdf is uploaded or not
-  if(file_exists($_FILES['notice']['tmp_name']) || is_uploaded_file($_FILES['notice']['tmp_name']))
-  {
-    $filecheck = basename($_FILES['notice']['name']);
-    $ext = strtolower(substr($filecheck, strrpos($filecheck, '.') + 1));
-
-    if (!$ext == "pdf" )
-    {
-        $notice_err = "Upload a proper pdf file";
-    }
-    else
-    {
-      
-       move_uploaded_file($_FILES["notice"]["tmp_name"],"./upload/career/" . $_FILES["notice"]["name"]);
-       // echo "Stored in: " . "upload/" . $_FILES["image_1"]["name"];
-       $notice = $_FILES["notice"]["name"]; 
-    }
-  }
-  else
-  {
-    $notice_err = 'upload a pdf file';
-  }
-
-   
-
-
-
-// ========================Blog part three==============
-   
-
-  # checking for error and save the data  
-    if(empty($title_err) && empty($notice_err))
-    {
-
-        //if no errors store the values in db 
-         # Prepare a select statement
-        $sql = "INSERT INTO `career` (`title`, `subtitle`, `file_link`, `created_at`)";
-        $sql.= "VALUES ('{$title}', '{$sub_title}', '{$notice}', current_timestamp())";
-
-
-        if (mysqli_query($link, $sql))
-        {
-          echo "New record created successfully";
-        }
-         else {
-              echo "Error: " . $sql . "<br>" . mysqli_error($link);
-        }
-
-        mysqli_close($link);
-
-    }
-   
-
-}
-?>
-
-
 <?php include("./adminNavbar.php"); ?>
+
+
 
     <!-- =============================== Header Section ============================= -->
     <div class="header-height"></div>
@@ -95,69 +10,85 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <div class="row">
       <div class="col-10 m-auto">
         <section class="blog-listing gray-bg">
-                <div class="row justify-content-center p-3 m-2">
-                     <div class="col-12">
-                     <div class="row bg-light justify-content-center">
-                        <div class="col-sm-4 text-center"><h2 class="mt-3">New Career Notice</h2></div>
+                <div class="container">
+                    <div class="row bg-light justify-content-center">
+                        <div class="col-sm-4 text-center"><h1 class="mt-3">Messages</h1></div><br>
+
+                       
                     </div>
-                     
-                 </div> 
-                    
-
-                    <!-- Form start -->
-                    <div class="col-lg-10">
-                        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate enctype="multipart/form-data">
-                          
-                          <div class="form-group mt-2">
-                            <h4 class=" alert-danger" role="alert">
-                              <?php
-                                  if (!empty($title_err)) 
-                                      echo $title_err ;
-                              ?>
-                            </h4>
-                            <label for="title">Title Of career notice</label>
-                            <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter The  Title">
-                          </div>
-
-                          <div class="form-group mt-2">
-                            <h4 class=" alert-danger" role="alert">
-                              <?php
-                                    if (!empty($sub_title_err)) 
-                                      echo $sub_title_err ;
-                              ?>
-                            </h4>
-                            <label for="title">Sub-title Of career notice</label>
-                            <input type="textbox" class="form-control" id="sub_title" name="sub_title" aria-describedby="emailHelp" placeholder="Enter The  subtitle">
-                          </div>
-                          <br><br>
-                  
-                          <div class="form-group">
-                            <h4 class=" alert-danger" role="alert">
+                    <div class="row align-items-start">
+                        <div class="col-lg-12 m-15px-tb">
+                            <div class="row">
+                                
+                                    
+                 <!-- ===============single blog========= -->
                                 <?php
-                                    if (!empty($notice_err)) 
-                                      echo $notice_err ;
-                              ?>
-                            </h4>
-                            <label for="exampleFormControlFile1">Upload pdf file</label>
-                            <input type="file" class="form-control-file" id="notice" name="notice">
-                          </div>
-                          <br><br>
+                                 $sql = "SELECT * from messages ORDER BY id DESC";
+                                 $result = $link->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                  // output data of each row
+                                  while($row = $result->fetch_assoc()) {
+
+                                ?>
+
+                                <div class="col-sm-4 mb-5 mt-5">
+                                    <div class="card" style="width: 18rem;">
+                                      <div class="card-body">
+                                        <h4 class="card-title">
+                                            <img src="./assets/face.png" style="height: 50px;">
+                                            <?php echo $row['name'] ?>
+                                        </h4>
+                                        <p class="card-text"> <?php echo $row['message'] ?></p>
+                                        <a href="#" class="btn btn-danger">Delete</a>
+                                      </div>
+                                    </div>
+                                </div>
 
 
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                        <!-- Form End -->
 
+                            <?php 
+                             }
+                            } else {
 
+                            ?>
+                                 <div class="col-sm-4 mb-5 mt-5">
+                                    <div class="card" style="width: 18rem;">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's contome quick example text to build on the card title and make up the bulk of the card's contome quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-danger">Delete</a>
+                                      </div>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                    <!-- ====================Single Blog end--------- -->
+                                
+                              
 
+                                <!-- <div class="col-12">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div> -->
 
-
-
+                            </div>
+                        </div>
 
                     </div>
                 </div>
-
-              
             </section>  
               
         </div>
@@ -260,8 +191,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 })();
             </script>
 </body>
+
+
 </html>
 
 
 
-<!-- ==============handling the submission of form============== -->
+

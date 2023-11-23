@@ -101,7 +101,7 @@
                             <li><a href="stories.php">Impact of Stories</a></li>
 
 
-                            <li><a href="area1.html">Strategic Areas</a>
+                            <li><a href="area1.php">Strategic Areas</a>
                                 <ul>
                                     <li><a href="area1.php">Strategic Area 1</a></li>
                                     <li><a href="area2.php">Strategic Area 2</a></li>
@@ -109,7 +109,7 @@
                                 </ul>
                             </li>
                             <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.php">Get Involved</a></li>
+                             
                             <li> <a href="contact.php">Contact</a></li>
                         </ul>
 

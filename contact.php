@@ -1,3 +1,86 @@
+<?php
+
+
+# Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+
+    //importing th conntion
+    require_once "./adminPanel/config.php";
+
+
+  // ================form valiation=====================
+  if (empty(trim($_POST["name"]))) {
+    $name_err = "Type Your Name To write Message";
+  } else {
+    $name = trim($_POST["name"]);
+  }
+
+
+
+  if (empty(trim($_POST["email"]))) {
+    $email = "";
+  } else {
+    $email = trim($_POST["email"]);
+  }
+
+
+if (empty(trim($_POST["message"]))) {
+    $message_err = "Message can not be empty";
+  } else {
+    $message = trim($_POST["message"]);
+  }
+
+
+
+   
+
+  # checking for error and save the data  
+    if(empty($name_err) && empty($message_err))
+    {
+
+        //if no errors store the values in db 
+         # Prepare a select statement
+        $sql = "INSERT INTO `messages` (`name`, `email`, `Message`,`created_at`)";
+        $sql.= "VALUES ('{$name}', '{$email}', '{$message}', current_timestamp())";
+
+
+        session_start();
+        if (mysqli_query($link, $sql))
+        {
+           $_SESSION["session_message_success"] = "Message sent successfully";
+        }
+         else {
+            $_SESSION["session_message_error"] = "Error: " . $sql . "<br>" . mysqli_error($link);
+        }
+
+
+    }
+   
+
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -37,9 +120,9 @@
 
 <body>
 
-    <div class="site-preloader-wrap">
+    <!-- <div class="site-preloader-wrap">
         <div class="spinner"></div>
-    </div>
+    </div> -->
     <header id="header" class="header-section">
         <div class="top-header">
             <div class="container">
@@ -77,7 +160,7 @@
                             <li class="active"> <a href="index.php">Home</a>
 
                             </li>
-                            <li><a href="about.html">About</a>
+                            <li><a href="about.php">About</a>
                                 <ul>
                                     <li><a href="./about.php#executives">Executive Board</a></li>
                                     <li><a href="./about.php#staff">Staff </a></li>
@@ -89,7 +172,7 @@
                             <li><a href="stories.php">Impact of Stories</a></li>
 
 
-                            <li><a href="area1.html">Strategic Areas</a>
+                            <li><a href="area1.php">Strategic Areas</a>
                                 <ul>
                                     <li><a href="area1.php">Strategic Area 1</a></li>
                                     <li><a href="area2.php">Strategic Area 2</a></li>
@@ -97,7 +180,7 @@
                                 </ul>
                             </li>
                             <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.php">Get Involved</a></li>
+                             
                             <li> <a href="contact.php">Contact</a></li>
                         </ul>
 
@@ -139,13 +222,13 @@
                     <div class="contact-form">
                         <h3>Drop us a line</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <form action="https://html.dynamiclayers.net/dl/charitify/contact.php" method="post" id="ajax_form" class="form-horizontal">
+                        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form-horizontal">
                             <div class="form-group colum-row row">
                                 <div class="col-sm-6">
                                     <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" >
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -158,7 +241,25 @@
                                     <button id="submit" class="default-btn" type="submit">Send Message</button>
                                 </div>
                             </div>
-                            <div id="form-messages" class="alert" role="alert"></div>
+                            <?php if(isset($_SESSION["session_message_success"])){
+                            ?>
+                             <div  class="alert alert-success" role="alert">
+                                 <?php echo $_SESSION["session_message_success"] ?>
+                             </div>
+                            <?php
+                                unset($_SESSION['views']);
+                                } 
+                            ?>
+                             <?php if(isset($_SESSION["session_message_error"])){
+                            ?>
+                             <div  class="alert alert-danger" role="alert">
+                                 <?php echo $_SESSION["session_message_error"] ?>   
+                             </div>
+                            <?php
+                                unset($_SESSION['"session_message_error']);
+                                } 
+                            ?>
+                            <!-- <div id="form-messages" class="alert" role="alert"></div> -->
                         </form>
                     </div>
                 </div>

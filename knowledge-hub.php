@@ -88,7 +88,7 @@
                             <li class="active"> <a href="index.php">Home</a>
 
                             </li>
-                            <li><a href="about.html">About</a>
+                            <li><a href="about.php">About</a>
                                 <ul>
                                     <li><a href="./about.php#executives">Executive Board</a></li>
                                     <li><a href="./about.php#staff">Staff </a></li>
@@ -108,7 +108,6 @@
                                 </ul>
                             </li>
                             <li> <a href="knowledge-hub.php">Knowledge Hub</a></li>
-                            <li> <a href="get-involved.php">Get Involved</a></li>
                             <li> <a href="contact.php">Contact</a></li>
                         </ul>
 
@@ -148,10 +147,10 @@
 
             <?php
                     //define total number of results you want per page  
-                $results_per_page = 3;  
+                $results_per_page = 9;  
               
                 //find the total number of results stored in the database  
-                $query = "select * from gallery";  
+                $query = "select * from gallery ORDER BY 'id' ASC";  
                 $result = mysqli_query($link, $query);  
                 $number_of_result = mysqli_num_rows($result);  
               // echo $number_of_result;
@@ -169,7 +168,8 @@
                 $page_first_result = ($page-1) * $results_per_page;  
               
                 // //retrieve the selected results from database   
-                $query = "SELECT *FROM gallery LIMIT " . $page_first_result . ',' . $results_per_page;  
+                $query = "SELECT *FROM gallery ORDER BY id DESC LIMIT " . $page_first_result . ',' . $results_per_page; 
+                // die($query); 
                 $result = mysqli_query($link, $query);  
                   
                 //display the retrieved result on the webpage  
