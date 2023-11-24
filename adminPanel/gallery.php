@@ -23,7 +23,7 @@
                                 
                  <!-- ===============single photo========= -->
                                 <?php
-                                 $sql = "SELECT * from gallery";
+                                 $sql = "SELECT * from gallery ORDER BY id DESC";
                                  $result = $link->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -40,6 +40,7 @@
                                                 <img src="./upload/gallery/<?php echo $row['file_link'];  ?>" title="" alt="">
                                             </a> 
                                         </div>
+                                        <p><?php echo $row['caption'];  ?>"</p>
                                         <div class="blog-info">
                                            
                                            
@@ -49,10 +50,10 @@
                                                     <i class="arrow"></i>
                                                 </a> -->
                                                
-                                                <a href="#" class=" btn px-btn-arrow btn-danger m-3">
-                                                    <span>Delete</span>
-                                                    <i class="arrow"></i>
-                                                </a>
+                                                <form action="./delete.php" method="POST">
+                                                <input type="hidden"  name="delete_gallery" value="<?php echo $row['id'] ?>">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
 
                                             </div>
                                         </div>

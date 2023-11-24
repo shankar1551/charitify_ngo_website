@@ -23,7 +23,7 @@
                                 
                  <!-- ===============single blog========= -->
                                 <?php
-                                 $sql = "SELECT * from career";
+                                 $sql = "SELECT * from career ORDER BY id DESC";
                                  $result = $link->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -48,9 +48,10 @@
                                             </p>
                                             <div class="btn-bar">
                                                 <a href="./upload/career/<?php echo $row['file_link'] ?>" target="_blank" class="btn btn-success m-2" style="width:100%">View PDF</a>
-                                                <a href="#" class=" btn btn-danger m-2" style="width:100%">
-                                                   Delete
-                                                </a>
+                                                <form action="./delete.php" method="POST">
+                                                    <input type="hidden"  name="delete_career" value="<?php echo $row['id'] ?>">
+                                                    <button type="submit" class="btn btn-danger" style="width:100%">Delete</button>
+                                               </form>
                                             </div>
                                         </div>
                                     </div>

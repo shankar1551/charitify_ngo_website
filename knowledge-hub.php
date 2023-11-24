@@ -180,10 +180,10 @@
 
                             <div class="col-lg-4 col-sm-6 single-item branding design mb-4">
                                 <div class="gallery-wrap" style="text-align:center;">
-                                    <img src="./adminPanel/upload/gallery/<?php echo $row['file_link'] ?>" alt="gallery">
+                                    <img src="./adminPanel/upload/gallery/<?php echo $row['file_link'] ?>" alt="gallery" title="teting">
                                     <strong class="" style="font-size: 12px;"><?php echo $row['caption'] ?></strong>
                                     <div class="hover">
-                                        <a class="img-popup" data-gall="galleryimg" href="./adminPanel/upload/gallery/<?php echo $row['file_link']?>"><i class="ti-image"></i></a>
+                                        <a class="img-popup" title="<?php echo $row['caption']?>" data-gall="galleryimg" href="./adminPanel/upload/gallery/<?php echo $row['file_link']?>"><i class="ti-image"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -236,5 +236,40 @@
         </div>
     </section>
 
+
+<div >
+
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "177517895442914");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v18.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script> 
+</div>
 
 <?php include("./footer.php");?>

@@ -26,7 +26,7 @@
                  <!-- ===============single blog========= -->
 
                                 <?php
-                                 $sql = "SELECT * from blogs";
+                                 $sql = "SELECT * from blogs ORDER BY id DESC";
                                  $result = $link->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -57,25 +57,23 @@
                                         <div class="blog-info">
                                             <h5><a href="#">
                                                 <?php
-                                                    echo implode(' ', array_slice(str_word_count($row['title'], 2), 0, 6));
+                                                    echo $row['title'];
                                                     ?>
                                             </a></h5>
 
                                             <p>
                                                 <?php
-                                                    echo implode(' ', array_slice(str_word_count($row['subtitle'], 2), 0, 12));
+                                                    echo $row['subtitle'];
                                                 ?>
                                             </p>
                                             <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow m-3">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
+                                            <a href="../story.php?title=<?php echo $row['title'] ?>" class="post-meta">Read More</a>
+
                                                
-                                                <a href="#" class="px-btn-arrow btn-danger m-3">
-                                                    <span>Delete</span>
-                                                    <i class="arrow"></i>
-                                                </a>
+                                            <form action="./delete.php" method="POST">
+                                                <input type="hidden"  name="delete_blog" value="<?php echo $row['id'] ?>">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                           </form>
 
                                             </div>
                                         </div>
@@ -94,22 +92,6 @@
                     <!-- ====================Single Blog end--------- -->
                                 
                               
-
-                                <!-- <div class="col-12">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </div> -->
 
                             </div>
                         </div>
@@ -143,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+                
             </footer>
             <a data-scroll href="#header" id="scroll-to-top"><i class="arrow_up"></i></a>
 

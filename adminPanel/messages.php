@@ -1,5 +1,6 @@
-<?php include("./adminNavbar.php"); ?>
 
+
+<?php include("./adminNavbar.php"); ?>
 
 
     <!-- =============================== Header Section ============================= -->
@@ -32,7 +33,7 @@
 
                                 ?>
 
-                                <div class="col-sm-4 mb-5 mt-5">
+                                <div class="col-sm-6 col-lg-4 mb-5 mt-5">
                                     <div class="card" style="width: 18rem;">
                                       <div class="card-body">
                                         <h4 class="card-title">
@@ -40,7 +41,13 @@
                                             <?php echo $row['name'] ?>
                                         </h4>
                                         <p class="card-text"> <?php echo $row['message'] ?></p>
-                                        <a href="#" class="btn btn-danger">Delete</a>
+                                       <form action="./delete.php" method="POST">
+                                        <input type="hidden"  name="delete_msg" value="<?php echo $row['id'] ?>">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                       </form>
+
+                                        
+
                                       </div>
                                     </div>
                                 </div>
@@ -52,37 +59,16 @@
                             } else {
 
                             ?>
-                                 <div class="col-sm-4 mb-5 mt-5">
-                                    <div class="card" style="width: 18rem;">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's contome quick example text to build on the card title and make up the bulk of the card's contome quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-danger">Delete</a>
-                                      </div>
-                                    </div>
+                                 <div class="col-12">
+                                    <h4>No Messages</h4>
                                 </div>
                             <?php
                             }
+
                             ?>
                     <!-- ====================Single Blog end--------- -->
                                 
                               
-
-                                <!-- <div class="col-12">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </div> -->
 
                             </div>
                         </div>
