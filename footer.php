@@ -31,14 +31,17 @@
                             ?>
                                        
                                 <h4 class="text-light"> 
-                                    <?php   echo  $data['title']; ?>
-                                </h4>
-                                <p><?php   echo  $data['subtitle']; ?> </p>
-                                <li>
                                     <a class="" style="width:50%; color:#87CEEB" target="_blank;" href="adminPanel/upload/career/<?php  echo $data['file_link'];
-                                        ?>">View PDF
+                                        ?>"><?php  echo $data['title']; ; ?>
                                     </a>
-                                </li>
+
+                                </h4>
+                                <h5>
+                                    <a class="" style="width:50%; color:#87CEEB" target="_blank;" href="adminPanel/upload/career/<?php  echo $data['file_link'];
+                                        ?>"><?php  echo $data['subtitle']; ; ?>
+                                    </a>
+                                </h5>
+                               
                             <?php
                                 }else
                                 {
